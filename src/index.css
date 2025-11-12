@@ -1,0 +1,245 @@
+/* Color Variables - Deep Dark Blue & Bright Pastel Green Palette */
+:root {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --accent-1: #01c16a;
+  --accent-2: #10b981;
+  --accent-3: #059669;
+  --border-color: rgba(1, 193, 106, 0.2);
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-primary) 40%, var(--accent-1) 70%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-1);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: var(--accent-1);
+  color: var(--bg-primary);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+a {
+  color: var(--accent-1);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-2);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-2);
+}
+
+/* Responsive Design - Global Media Queries */
+
+/* Tablet: 769px to 1024px */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.98rem;
+  }
+}
+
+/* Mobile Tablet & Landscape: 481px to 768px */
+@media (max-width: 968px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile: 320px to 768px */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile: 320px to 480px */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
