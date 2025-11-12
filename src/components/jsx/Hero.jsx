@@ -28,11 +28,17 @@ function Hero({ language, data }) {
 
   const content = {
     en: {
+      greeting: "Hi, I'm",
+      name: "Kamal Dehbi",
+      prefix: "I'm ",
       cta: 'View My Work',
       secondary: 'Get In Touch',
       downloadResume: 'Download Resume'
     },
     fr: {
+      greeting: "Salut, je suis",
+      name: "Kamal Dehbi",
+      prefix: "Je suis ",
       cta: 'Voir Mon Travail',
       secondary: 'Me Contacter',
       downloadResume: 'Télécharger CV'
@@ -60,9 +66,12 @@ function Hero({ language, data }) {
     <section id="home" className="hero">
       <div className="hero-content">
         <div className="hero-text">
-          <h1>Hi, I'm Kamal Dehbi</h1>
+          <h1>
+            {content[language].greeting}<br />
+            {content[language].name}
+          </h1>
           <p className="hero-subtitle">
-            <span className="subtitle-prefix">I'm </span>
+            <span className="subtitle-prefix">{content[language].prefix}</span>
             <span ref={typedRef}></span>
           </p>
           <p className="hero-description">
@@ -87,6 +96,12 @@ function Hero({ language, data }) {
         <div className="hero-image">
           <div className="avatar">
             <img src="/logos/kamal.jpg" alt="Kamal Dehbi" />
+          </div>
+          <div className="availability-badge">
+            <span className="status-dot"></span>
+            {language === 'en' 
+              ? 'Available for Internships, Freelancing & Collaborations'
+              : 'Disponible pour Stages, Freelance et Collaborations'}
           </div>
         </div>
       </div>

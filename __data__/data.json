@@ -1,0 +1,633 @@
+{
+    "userFirstName": "itskamal",
+    "userLastName": "Kamal",
+    "userHeading": "Data Science, Data Engineer, Data Analyst, Full Stack, Machine Learning & AI, Deep Learning",
+    "userEmail": "kamaldehbi0114@gmail.com",
+    "userAddress": "",
+    "userPhoneNumber": "+212 607136757",
+    "id": 418866,
+    "resumeId": 418866,
+    "uuid": "5b0da481-c952-4af9-b4d6-6bd5ee8433d0",
+    "templateId": 1,
+    "cvName": "CV5",
+    "inReview": false,
+    "isShared": false,
+    "updatedAfterReview": false,
+    "createdAt": "2025-10-29T00:39:41.496Z",
+    "updatedAt": "2025-10-29T01:36:57.392Z",
+    "templateUrl": "https://hackerresume-prod.s3.us-east-1.amazonaws.com/thumbnails/30725457/5b0da481-c952-4af9-b4d6-6bd5ee8433d0.png",
+    "activeReviewId": 19833,
+    "inAiReview": false,
+    "reviewDone": true,
+    "userReviewFeedbackDone": false,
+    "awards": [],
+    "certifications": [
+        {
+            "id": 561684,
+            "description": "CCNA: Introduction to Networks",
+            "issuedBy": "Cisco Networking Academy",
+            "logo": "/logos/cisco.png",
+            "url": "https://www.credly.com/badges/540e0c44-897a-4762-873b-7a01fbfb68ab/public_url",
+            "sortOrderId": 0,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:18:09.218Z"
+        },
+        {
+            "id": 561685,
+            "description": "CS50x: Introduction to Computer Science",
+            "issuedBy": "Harvard University (edX)",
+            "logo": "/logos/Harvard-U_Logo.png",
+            "url": "https://certificates.cs50.io/e4d5f24a-9711-490a-9c03-5ed9ba3f056e.pdf?size=letter",
+            "sortOrderId": 1,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:18:09.218Z"
+        },
+        {
+            "id": 561686,
+            "description": "AWS Cloud Practitioner (CLF-C02)",
+            "issuedBy": "DataCamp",
+            "logo": "/logos/datacamp.png",
+            "url": "https://www.datacamp.com/completed/statement-of-accomplishment/track/bd5de439ea5f9715e10e29f0c2dafdef74b56d11",
+            "sortOrderId": 2,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:18:09.218Z"
+        },
+        {
+            "id": 561687,
+            "description": "GitHub Foundations",
+            "issuedBy": "DataCamp",
+            "logo": "/logos/datacamp.png",
+            "url": "https://www.datacamp.com/completed/statement-of-accomplishment/track/d8e5599e5a5fe56a13333d8a94bc13f9c485b029",
+            "sortOrderId": 3,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:18:09.218Z"
+        }
+    ],
+    "education": [
+        {
+            "id": 814668,
+            "degree": "Baccalaureate Sc Math Option B",
+            "degree_fr": "Baccalauréat Sc Math Option B",
+            "startDate": "September 2020",
+            "completionDate": "June 2021",
+            "institution": "Lycée Abdelmalek Essaadi",
+            "location": "Kénitra, Morocco",
+            "location_fr": "Kénitra, Maroc",
+            "score": "",
+            "scoreType": "",
+            "studyType": "Secondary",
+            "field": "Mathematics & Sciences",
+            "field_fr": "Mathématiques et Sciences",
+            "sortOrderId": 0,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T00:43:42.211Z"
+        },
+        {
+            "id": 814666,
+            "degree": "Integrated Class Preparatory",
+            "degree_fr": "Cycle Préparatoire",
+            "startDate": "September 2021",
+            "completionDate": "June 2023",
+            "institution": "ENSAM",
+            "logo": "/logos/ensam_logo.jpg",
+            "location": "Rabat, Morocco",
+            "location_fr": "Rabat, Maroc",
+            "score": "",
+            "scoreType": "",
+            "studyType": "Engineering",
+            "field": "Mathematics, Physics & Engineering Sciences",
+            "field_fr": "Mathématiques, Physique et Sciences de l'Ingénieur",
+            "sortOrderId": 1,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T00:43:42.211Z"
+        },
+        {
+            "id": 814667,
+            "degree": "Data Science, AI & Engineering",
+            "degree_fr": "Data Science, IA et Ingénierie",
+            "startDate": "September 2023",
+            "completionDate": "June 2026",
+            "institution": "ENSAM",
+            "logo": "/logos/ensam_logo.jpg",
+            "location": "Rabat, Morocco",
+            "location_fr": "Rabat, Maroc",
+            "score": "",
+            "scoreType": "",
+            "studyType": "Engineering",
+            "field": "Data Science, Artificial Intelligence & Big Data",
+            "field_fr": "Data Science, Intelligence Artificielle et Big Data",
+            "sortOrderId": 2,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T00:43:42.211Z"
+        }
+    ],
+    "work": [
+        {
+            "id": 497180,
+            "description": "* Developed a chatbot for the Fairlynk platform using a RAG pipeline, Langchain with groq API Key.\n* Supported multilingual questions in French, English, and Spanish.\n* Built user interface using Streamlit, HTML, and CSS.",
+            "description_fr": "* Développé un chatbot pour la plateforme Fairlynk en utilisant un pipeline RAG, Langchain avec l'API groq.\n* Prise en charge des questions multilingues en français, anglais et espagnol.\n* Création de l'interface utilisateur avec Streamlit, HTML et CSS.",
+            "technologies": ["Python", "Langchain", "RAG", "Groq API", "Streamlit", "HTML", "CSS"],
+            "projectUrl": "https://github.com/kamaLc73/Fairlynk-Guide-Bot",
+            "endDate": "September 2025",
+            "currentJob": false,
+            "role": "Intern – Chatbot Development",
+            "role_fr": "Stagiaire – Développement de Chatbot",
+            "location": "Rabat, Morocco",
+            "location_fr": "Rabat, Maroc",
+            "company": "Digiteam Archytas Conseil",
+            "logo": "/logos/archytas_conseil_logo.jpg",
+            "startDate": "July 2025",
+            "sortOrderId": 0,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:13:23.029Z"
+        },
+        {
+            "id": 497181,
+            "description": "* Built a Flask API for license plate detection from images using a CNN model.\n* Achieved 95% accuracy on Moroccan plates.\n* Designed PostgreSQL database schema using SQLAlchemy.\n* Deployed the application using Docker containers.",
+            "description_fr": "* Création d'une API Flask pour la détection de plaques d'immatriculation à partir d'images en utilisant un modèle CNN.\n* Atteint 95% de précision sur les plaques marocaines.\n* Conception du schéma de base de données PostgreSQL avec SQLAlchemy.\n* Déploiement de l'application avec des conteneurs Docker.",
+            "technologies": ["Python", "Flask", "CNN", "PostgreSQL", "SQLAlchemy", "Docker"],
+            "endDate": "August 2024",
+            "currentJob": false,
+            "role": "Intern – Backend Development",
+            "role_fr": "Stagiaire – Développement Backend",
+            "location": "Sale, Morocco",
+            "projectUrl": "https://github.com/kamaLc73/Plate-recognition",
+            "location_fr": "Salé, Maroc",
+            "company": "Bank Al-Maghrib (Dar Assikah)",
+            "logo": "/logos/Bank_Al-Maghrib_Logo.jpg",
+            "startDate": "July 2024",
+            "sortOrderId": 1,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:13:23.029Z"
+        }
+    ],
+    "projects": [
+        {
+            "id": 689173,
+            "name": "Earthquake Early Warning System",
+            "name_fr": "Système d'Alerte Précoce aux Tremblements de Terre",
+            "description": "Designed CNN models using high-rate GNSS data to predict earthquake magnitude and fault lines with improved accuracy.",
+            "description_fr": "Conception de modèles CNN utilisant des données GNSS haute fréquence pour prédire la magnitude des tremblements de terre et les lignes de faille avec une précision améliorée.",
+            "keywords": [
+                "Deep Learning",
+                "CNN",
+                "GNSS"
+            ],
+            "url": "https://github.com/kamaLc73/Seismic-GNSS-CNN",
+            "sortOrderId": 0,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689172,
+            "name": "Named Entity Recognition (NER)",
+            "name_fr": "Reconnaissance d'Entités Nommées (REN)",
+            "description": "Developed an NLP model for named entity recognition to extract entities from medical and generic texts, improving data extraction accuracy.",
+            "description_fr": "Développement d'un modèle NLP pour la reconnaissance d'entités nommées afin d'extraire des entités de textes médicaux et génériques, améliorant la précision de l'extraction de données.",
+            "keywords": [
+                "NLP",
+                "spaCy",
+                "HTML",
+                "CSS"
+            ],
+            "url": "https://github.com/kamaLc73/NER_project",
+            "sortOrderId": 1,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689176,
+            "name": "Medical Data Science Lab",
+            "name_fr": "Laboratoire de Science des Données Médicales",
+            "description": "Created interactive dashboards and visualizations for clinical datasets using Streamlit, enhancing data-driven decision making.",
+            "description_fr": "Création de tableaux de bord interactifs et de visualisations pour des ensembles de données cliniques avec Streamlit, améliorant la prise de décision basée sur les données.",
+            "keywords": [
+                "Streamlit",
+                "Pandas",
+                "NumPy",
+                "Plotly",
+                "Scikit-learn",
+                "LangChain"
+            ],
+            "url": "https://github.com/HAS1ELB/DataCarelytics",
+            "sortOrderId": 2,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689178,
+            "name": "ENSAM Alumni Tracking",
+            "name_fr": "Suivi des Anciens Élèves ENSAM",
+            "description": "Developed web scraping tools to collect alumni data from LinkedIn and Facebook, performed data analysis, and built models to predict career paths.",
+            "description_fr": "Développement d'outils de web scraping pour collecter les données des anciens élèves sur LinkedIn et Facebook, analyse de données et construction de modèles pour prédire les parcours professionnels.",
+            "keywords": [
+                "BeautifulSoup",
+                "Selenium"
+            ],
+            "url": "https://github.com/kamaLc73/Data-Collect-LinkedIn-Profiles-",
+            "sortOrderId": 3,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689175,
+            "name": "Real-Time Stream Processing with Kafka",
+            "name_fr": "Traitement de Flux en Temps Réel avec Kafka",
+            "description": "Implemented a scalable real-time data streaming architecture using Apache Kafka to process images, videos, and text data streams with YOLO.",
+            "description_fr": "Mise en œuvre d'une architecture de streaming de données en temps réel évolutive utilisant Apache Kafka pour traiter les flux de données d'images, de vidéos et de texte avec YOLO.",
+            "keywords": [
+                "Apache Kafka",
+                "Streamlit",
+                "YOLO"
+            ],
+            "url": "https://github.com/kamaLc73/YOLO_kafka",
+            "sortOrderId": 4,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689170,
+            "name": "Brain Tumor Classification",
+            "name_fr": "Classification des Tumeurs Cérébrales",
+            "description": "Developed a CNN model to classify brain tumors as benign or malignant, achieving 98% accuracy on MRI images.",
+            "description_fr": "Développement d'un modèle CNN pour classifier les tumeurs cérébrales comme bénignes ou malignes, atteignant 98% de précision sur les images IRM.",
+            "keywords": [
+                "Deep Learning",
+                "CNN"
+            ],
+            "url": "https://github.com/lidwaa/brain_tumor_classification",
+            "sortOrderId": 5,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689185,
+            "name": "Secure Document Management",
+            "name_fr": "Gestion Sécurisée des Documents",
+            "description": "Built a secure document management system for file storage, consultation, and downloads using Java JEE and MySQL.",
+            "description_fr": "Construction d'un système de gestion de documents sécurisé pour le stockage, la consultation et le téléchargement de fichiers utilisant Java JEE et MySQL.",
+            "keywords": [
+                "Java",
+                "MySQL"
+            ],
+            "url": "https://github.com/kamaLc73/Doc_management_jee",
+            "sortOrderId": 6,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689186,
+            "name": "Stage Management System",
+            "name_fr": "Système de Gestion des Stages",
+            "description": "Developed a comprehensive internship management platform with registration, approval, and reporting features using Java JEE and Oracle database.",
+            "description_fr": "Développement d'une plateforme complète de gestion des stages avec des fonctionnalités d'inscription, d'approbation et de reporting utilisant Java JEE et base de données Oracle.",
+            "keywords": [
+                "Java",
+                "Oracle"
+            ],
+            "url": "https://github.com/kamaLc73/Stage-management",
+            "sortOrderId": 7,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689187,
+            "name": "Hotel Management Desktop App",
+            "name_fr": "Application de Gestion Hôtelière",
+            "description": "Created a full-featured hotel management application with reservation, billing, and reporting capabilities using Java Swing.",
+            "description_fr": "Création d'une application complète de gestion hôtelière avec des capacités de réservation, de facturation et de reporting utilisant Java Swing.",
+            "keywords": [
+                "Java",
+                "Swing"
+            ],
+            "url": "https://github.com/kamaLc73/Hotel-management-desktop",
+            "sortOrderId": 8,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689188,
+            "name": "Progress Literacy Tracker",
+            "name_fr": "Suivi de Progression d'Alphabétisation",
+            "description": "Built an interactive web application to track and visualize literacy progress using Flask and Jinja templates.",
+            "description_fr": "Construction d'une application web interactive pour suivre et visualiser la progression de l'alphabétisation utilisant Flask et les templates Jinja.",
+            "keywords": [
+                "Flask",
+                "Jinja",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/Progress-Literacy-Tracker",
+            "sortOrderId": 9,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689189,
+            "name": "Max Size Search Algorithm",
+            "name_fr": "Algorithme de Recherche de Taille Maximale",
+            "description": "Implemented efficient Min-Max algorithm for finding maximum element in arrays with optimal time complexity.",
+            "description_fr": "Implémentation d'un algorithme Min-Max efficace pour trouver l'élément maximum dans les tableaux avec une complexité temporelle optimale.",
+            "keywords": [
+                "Algorithm",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/max-size-search",
+            "sortOrderId": 10,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689190,
+            "name": "Handwritten Digit Classification",
+            "name_fr": "Classification de Chiffres Manuscrits",
+            "description": "Developed a CNN model to classify handwritten digits from the MNIST dataset with 99% accuracy.",
+            "description_fr": "Développement d'un modèle CNN pour classifier les chiffres manuscrits de l'ensemble de données MNIST avec 99% de précision.",
+            "keywords": [
+                "CNN",
+                "TensorFlow",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/digit-classification",
+            "sortOrderId": 11,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689191,
+            "name": "Cats vs Dogs Classification",
+            "name_fr": "Classification Chats vs Chiens",
+            "description": "Built a deep learning model using CNN to classify images of cats and dogs with transfer learning.",
+            "description_fr": "Construction d'un modèle d'apprentissage profond utilisant CNN pour classifier les images de chats et de chiens avec transfert d'apprentissage.",
+            "keywords": [
+                "Deep Learning",
+                "CNN",
+                "TensorFlow"
+            ],
+            "url": "https://github.com/kamaLc73/cats-dogs-classification",
+            "sortOrderId": 12,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689192,
+            "name": "TV & Movies Tracker",
+            "name_fr": "Suivi de Séries TV et Films",
+            "description": "Created a web application to track watched TV shows and movies with ratings, reviews, and recommendations.",
+            "description_fr": "Création d'une application web pour suivre les séries TV et films visionnés avec des notes, des critiques et des recommandations.",
+            "keywords": [
+                "React",
+                "JavaScript",
+                "Node.js"
+            ],
+            "url": "https://github.com/kamaLc73/tv-movies-tracker",
+            "sortOrderId": 13,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689193,
+            "name": "Moroccan Plate Recognition",
+            "name_fr": "Reconnaissance de Plaques Marocaines",
+            "description": "Developed an OCR system specifically trained for Moroccan license plates with 95% recognition accuracy.",
+            "description_fr": "Développement d'un système OCR spécifiquement entraîné pour les plaques d'immatriculation marocaines avec 95% de précision de reconnaissance.",
+            "keywords": [
+                "OCR",
+                "CNN",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/plate-recognition",
+            "sortOrderId": 14,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689194,
+            "name": "Spotify Data Analysis",
+            "name_fr": "Analyse de Données Spotify",
+            "description": "Analyzed Spotify music dataset to identify trends, patterns, and correlations using Pandas and visualization libraries.",
+            "description_fr": "Analyse d'un ensemble de données musicales Spotify pour identifier les tendances, les modèles et les corrélations utilisant Pandas et des bibliothèques de visualisation.",
+            "keywords": [
+                "Pandas",
+                "Matplotlib",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/spotify-analysis",
+            "sortOrderId": 15,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689195,
+            "name": "Discord Bot",
+            "name_fr": "Bot Discord",
+            "description": "Built a feature-rich Discord bot with music playback, moderation commands, and real-time event handling.",
+            "description_fr": "Construction d'un bot Discord riche en fonctionnalités avec lecture de musique, commandes de modération et gestion d'événements en temps réel.",
+            "keywords": [
+                "discord.py",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/discord-bot",
+            "sortOrderId": 16,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689196,
+            "name": "Manga Downloader",
+            "name_fr": "Téléchargeur de Manga",
+            "description": "Developed an automated web scraping tool to download manga chapters with image optimization.",
+            "description_fr": "Développement d'un outil de web scraping automatisé pour télécharger des chapitres de manga avec optimisation d'images.",
+            "keywords": [
+                "BeautifulSoup",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/manga-downloader",
+            "sortOrderId": 17,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        },
+        {
+            "id": 689197,
+            "name": "SVM Nature Image Classification",
+            "name_fr": "Classification d'Images Nature avec SVM",
+            "description": "Implemented Support Vector Machine model to classify nature images using computer vision techniques.",
+            "description_fr": "Implémentation d'un modèle de Machine à Vecteurs de Support pour classifier les images de nature utilisant des techniques de vision par ordinateur.",
+            "keywords": [
+                "scikit-learn",
+                "OpenCV",
+                "Python"
+            ],
+            "url": "https://github.com/kamaLc73/svm-nature-classification",
+            "sortOrderId": 18,
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T01:17:30.219Z"
+        }
+    ],
+    "skills": [
+        {
+            "skillType": "programming",
+            "skillValues": [
+                "Python",
+                "Java",
+                "C",
+                "C++",
+                "R",
+                "MATLAB",
+                "Scala",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+        {
+            "skillType": "machinelearning",
+            "skillValues": [
+                "TensorFlow",
+                "Keras",
+                "Scikit-learn",
+                "XGBoost",
+                "OpenCV",
+                "Spacy",
+                "LangChain",
+                "YOLO"
+            ]
+        },
+        {
+            "skillType": "dataanalysis",
+            "skillValues": [
+                "Pandas",
+                "NumPy",
+                "Matplotlib",
+                "Seaborn",
+                "Plotly",
+                "Power BI",
+                "Google Looker Studio"
+            ]
+        },
+        {
+            "skillType": "bigdata",
+            "skillValues": [
+                "Apache Kafka",
+                "Hadoop",
+                "Hive",
+                "Pig",
+                "Sqoop",
+                "Spark",
+                "HBase"
+            ]
+        },
+        {
+            "skillType": "webdev",
+            "skillValues": [
+                "Flask",
+                "FastAPI",
+                "Java EE",
+                "React",
+                "Streamlit",
+                "Bootstrap",
+                "Jinja",
+                "SQLAlchemy",
+                "Beautiful Soup",
+                "Selenium"
+            ]
+        },
+        {
+            "skillType": "tools",
+            "skillValues": [
+                "Git",
+                "GitHub",
+                "Linux",
+                "Docker",
+                "VS Code",
+                "AWS Cloud"
+            ]
+        },
+        {
+            "skillType": "database",
+            "skillValues": [
+                "MySQL",
+                "PostgreSQL",
+                "SQLite",
+                "Oracle SQL",
+                "MongoDB",
+                "Neo4j"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "id": 628999,
+            "network": "GitHub",
+            "username": "",
+            "url": "https://github.com/kamaLc73",
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:40:21.232Z",
+            "updatedAt": "2025-10-29T00:42:58.322Z"
+        },
+        {
+            "id": 629002,
+            "network": "Linkedin",
+            "username": "",
+            "url": "https://www.linkedin.com/in/kamal-dehbi/",
+            "resumeId": 418866,
+            "createdAt": "2025-10-29T00:42:50.755Z",
+            "updatedAt": "2025-10-29T00:42:58.322Z"
+        }
+    ],
+    "user": {
+        "id": 491711,
+        "uid": "30725457",
+        "name": "Kamal Dehbi",
+        "role": "",
+        "companyName": "",
+        "lastActiveToken": "",
+        "createdAt": "2025-10-19T12:06:55.899Z",
+        "updatedAt": "2025-10-29T19:08:10.573Z",
+        "lastNotificationCheck": "2025-10-19T12:06:55.899Z",
+        "incompleteResumeEmailCount": 0,
+        "reviewer": false,
+        "reviewCredits": 1,
+        "uploadCredits": 5,
+        "reviewOnboardingDone": true,
+        "hacker_id": "30725457",
+        "username": "kxmilc73",
+        "email": "kamaldehbi0114@gmail.com",
+        "secondary_emails": [],
+        "banners": {},
+        "credits": {
+            "uploadCredits": 5,
+            "reviewCredits": 1
+        },
+        "existingResume": {}
+    },
+    "userId": 491711,
+    "review": null
+}

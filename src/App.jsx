@@ -19,6 +19,30 @@ function App() {
     document.documentElement.setAttribute('data-theme', 'dark')
   }, [])
 
+  useEffect(() => {
+    // Scroll reveal animation
+    const revealSections = () => {
+      const sections = document.querySelectorAll('section')
+      
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top
+        const windowHeight = window.innerHeight
+        
+        if (sectionTop < windowHeight * 0.75) {
+          section.classList.add('reveal')
+        }
+      })
+    }
+
+    // Initial check
+    revealSections()
+    
+    // Add scroll listener
+    window.addEventListener('scroll', revealSections)
+    
+    return () => window.removeEventListener('scroll', revealSections)
+  }, [])
+
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'fr' : 'en')
   }
