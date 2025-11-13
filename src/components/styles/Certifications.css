@@ -45,7 +45,6 @@
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
-  border-left: 4px solid var(--accent-1);
 }
 
 .cert-item:hover {

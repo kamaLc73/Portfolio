@@ -46,7 +46,6 @@
   padding: 1.8rem;
   border-radius: 15px;
   border: 1px solid var(--border-color);
-  border-left: 4px solid var(--accent-1);
   transition: all 0.3s ease;
   position: relative;
 }
