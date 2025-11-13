@@ -31,6 +31,59 @@
   border-radius: 2px;
 }
 
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  border: 2px solid var(--border-color);
+  background: rgba(26, 31, 58, 0.3);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+[data-theme='light'] .filter-btn {
+  background: rgba(240, 241, 243, 0.5);
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-1);
+  color: var(--accent-1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 193, 106, 0.2);
+}
+
+.filter-btn.active {
+  background: var(--accent-1);
+  border-color: var(--accent-1);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 15px rgba(1, 193, 106, 0.3);
+}
+
+[data-theme='light'] .filter-btn.active {
+  color: white;
+}
+
+.filter-btn.active:hover {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 193, 106, 0.4);
+}
+
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

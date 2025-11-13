@@ -61,7 +61,12 @@ function Education({ language, data }) {
                   )}
                   <div className="edu-title-group">
                     <h3>{language === 'fr' && edu.degree_fr ? edu.degree_fr : edu.degree}</h3>
-                    <p className="edu-field">{language === 'fr' && edu.field_fr ? edu.field_fr : edu.field}</p>
+                    <p className="edu-field">
+                      {language === 'fr' && edu.field_fr ? edu.field_fr : edu.field}
+                      {(edu.score || edu.score_fr) && (
+                        <span className="edu-honors-inline"> : {language === 'fr' && edu.score_fr ? edu.score_fr : edu.score}</span>
+                      )}
+                    </p>
                   </div>
                 </div>
                 <div className="edu-details">

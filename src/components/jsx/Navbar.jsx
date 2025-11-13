@@ -34,8 +34,7 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data }) {
       <div className="nav-container">
         <div className="nav-logo">
           <a href="#home">
-            <img src="/logos/kamal.jpg" alt="Kamal Dehbi" className="logo-image" />
-            <span className="logo-text">Kamal Dehbi</span>
+            <span className="logo-text">KAMAL DEHBI</span>
           </a>
         </div>
         

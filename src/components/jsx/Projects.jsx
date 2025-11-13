@@ -3,6 +3,7 @@ import '../styles/Projects.css'
 
 function Projects({ language, data }) {
   const [showAll, setShowAll] = useState(false)
+  const [activeFilter, setActiveFilter] = useState('All')
 
   const content = {
     en: { 
@@ -19,7 +20,36 @@ function Projects({ language, data }) {
     }
   }
 
-  const displayedProjects = showAll ? data.projects : data.projects.slice(0, 6)
+  const categories = {
+    en: {
+      all: 'All',
+      ai: 'Artificial Intelligence',
+      ml: 'Machine Learning',
+      web: 'Web Development',
+      medical: 'Medical AI'
+    },
+    fr: {
+      all: 'Tous',
+      ai: 'Intelligence Artificielle',
+      ml: 'Machine Learning',
+      web: 'Développement Web',
+      medical: 'IA Médicale'
+    }
+  }
+
+  const filterButtons = [
+    { key: 'All', category: null },
+    { key: 'AI', category: 'AI' },
+    { key: 'ML', category: 'ML' },
+    { key: 'Web', category: 'Web' },
+    { key: 'Medical', category: 'Medical' }
+  ]
+
+  const filteredProjects = activeFilter === 'All' 
+    ? data.projects 
+    : data.projects.filter(p => p.category === activeFilter)
+
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6)
 
   return (
     <section id="projects" className="projects">
@@ -27,6 +57,20 @@ function Projects({ language, data }) {
         <div className="section-title-wrapper">
           <h2 className="section-title">{content[language].title}</h2>
         </div>
+        
+        {/* Filter Buttons */}
+        <div className="filter-buttons">
+          {filterButtons.map((filter) => (
+            <button
+              key={filter.key}
+              className={`filter-btn ${activeFilter === filter.key ? 'active' : ''}`}
+              onClick={() => setActiveFilter(filter.key)}
+            >
+              {categories[language][filter.key.toLowerCase()]}
+            </button>
+          ))}
+        </div>
+
         <div className="projects-grid">
           {displayedProjects.map((project, idx) => (
             <div key={idx} className="project-card">
@@ -49,7 +93,7 @@ function Projects({ language, data }) {
           ))}
         </div>
         
-        {data.projects.length > 6 && (
+        {filteredProjects.length > 6 && (
           <div className="view-all-container">
             <button 
               className="view-all-btn" 
