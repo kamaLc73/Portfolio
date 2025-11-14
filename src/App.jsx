@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import data from '../__data__/data.json'
 import Navbar from './components/jsx/Navbar'
 import Hero from './components/jsx/Hero'
@@ -9,6 +9,8 @@ import Footer from './components/jsx/Footer'
 
 function App() {
   const [language, setLanguage] = useState('en')
+  const aboutSectionRef = useRef(null)
+  const workSectionRef = useRef(null)
 
   useEffect(() => {
     // Force dark theme
@@ -47,12 +49,35 @@ function App() {
     // Theme toggle disabled - dark mode only
   }
 
+  const navigateToSubSection = (section, index) => {
+    console.log('App.jsx navigateToSubSection called:', section, index)
+    console.log('aboutSectionRef.current:', aboutSectionRef.current)
+    console.log('workSectionRef.current:', workSectionRef.current)
+    
+    if (section === 'about' && aboutSectionRef.current) {
+      console.log('Navigating to about section, index:', index)
+      aboutSectionRef.current.navigateToSlide(index)
+    } else if (section === 'work' && workSectionRef.current) {
+      console.log('Navigating to work section, index:', index)
+      workSectionRef.current.navigateToSlide(index)
+    } else {
+      console.error('Ref not found for section:', section)
+    }
+  }
+
   return (
     <div className="App" data-theme="dark">
-      <Navbar language={language} toggleLanguage={toggleLanguage} isDark={true} toggleTheme={toggleTheme} data={data} />
+      <Navbar 
+        language={language} 
+        toggleLanguage={toggleLanguage} 
+        isDark={true} 
+        toggleTheme={toggleTheme} 
+        data={data}
+        navigateToSubSection={navigateToSubSection}
+      />
       <Hero language={language} data={data} />
-      <AboutSection language={language} data={data} />
-      <WorkSection language={language} data={data} />
+      <AboutSection ref={aboutSectionRef} language={language} data={data} />
+      <WorkSection ref={workSectionRef} language={language} data={data} />
       <Contact language={language} data={data} />
       <Footer language={language} />
     </div>

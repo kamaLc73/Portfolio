@@ -1,11 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, forwardRef, useImperativeHandle } from 'react'
 import '../styles/WorkSection.css'
 
-function WorkSection({ language, data }) {
+const WorkSection = forwardRef(({ language, data }, ref) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [slideDirection, setSlideDirection] = useState('next')
   const [activeFilter, setActiveFilter] = useState('All')
   const [showAll, setShowAll] = useState(false)
+
+  useImperativeHandle(ref, () => ({
+    navigateToSlide: (index) => {
+      console.log('WorkSection navigateToSlide called with index:', index, 'current activeIndex:', activeIndex)
+      setSlideDirection(index > activeIndex ? 'next' : 'prev')
+      setActiveIndex(index)
+      // Scroll to section top
+      document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }), [activeIndex])
 
   const content = {
     en: {
@@ -545,6 +555,6 @@ function WorkSection({ language, data }) {
       </div>
     </section>
   )
-}
+})
 
 export default WorkSection

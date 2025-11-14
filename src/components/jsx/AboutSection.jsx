@@ -1,9 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, forwardRef, useImperativeHandle } from 'react'
 import '../styles/AboutSection.css'
 
-function AboutSection({ language, data }) {
+const AboutSection = forwardRef(({ language, data }, ref) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [slideDirection, setSlideDirection] = useState('next')
+
+  useImperativeHandle(ref, () => ({
+    navigateToSlide: (index) => {
+      console.log('AboutSection navigateToSlide called with index:', index, 'current activeIndex:', activeIndex)
+      setSlideDirection(index > activeIndex ? 'next' : 'prev')
+      setActiveIndex(index)
+      // Scroll to section top
+      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }), [activeIndex])
   
   const content = {
     en: {
@@ -412,6 +422,6 @@ function AboutSection({ language, data }) {
       </div>
     </section>
   )
-}
+})
 
 export default AboutSection
