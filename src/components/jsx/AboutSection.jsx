@@ -125,8 +125,37 @@ function AboutSection({ language, data }) {
               </div>
               
               <p className="about-subtitle">{content[language].subtitle}</p>
-              <div className="about-content">
-                <p className="about-bio">{content[language].bio}</p>
+              <div className="about-content-wrapper">
+                <div className="about-content">
+                  <p className="about-bio">{content[language].bio}</p>
+                </div>
+                
+                <div className="stats-grid">
+                  <div className="stat-card">
+                    <h3 className="stat-number">10+</h3>
+                    <p className="stat-label">
+                      {language === 'en' ? 'AI/ML Projects' : 'Projets IA/ML'}
+                    </p>
+                  </div>
+                  <div className="stat-card">
+                    <h3 className="stat-number">2</h3>
+                    <p className="stat-label">
+                      {language === 'en' ? 'Internships' : 'Stages'}
+                    </p>
+                  </div>
+                  <div className="stat-card">
+                    <h3 className="stat-number">30+</h3>
+                    <p className="stat-label">
+                      {language === 'en' ? 'Technologies' : 'Technologies'}
+                    </p>
+                  </div>
+                  <div className="stat-card">
+                    <h3 className="stat-number">3+</h3>
+                    <p className="stat-label">
+                      {language === 'en' ? 'Years of Experience' : 'Années d\'expérience'}
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div className="carousel-bottom-nav">

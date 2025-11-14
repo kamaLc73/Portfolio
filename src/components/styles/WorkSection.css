@@ -374,55 +374,176 @@
 }
 
 .project-card {
-  background: rgba(31, 41, 55, 0.6);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 2rem;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease;
+  justify-content: flex-start;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  height: 100%;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(1, 193, 106, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: 20px;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-1);
-  box-shadow: 0 10px 30px rgba(1, 193, 106, 0.2);
+  transform: translateY(-8px);
+  border-color: rgba(1, 193, 106, 0.5);
+  box-shadow: 0 20px 40px rgba(1, 193, 106, 0.3), 0 0 0 1px rgba(1, 193, 106, 0.2);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.project-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(17, 24, 39, 0.8), transparent);
+  pointer-events: none;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.9);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.project-status {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.project-status:hover {
+  transform: scale(1.05);
+}
+
+.project-status.finished {
+  background: rgba(16, 185, 129, 0.95);
+  color: white;
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.project-status.in-progress {
+  background: rgba(99, 102, 241, 0.95);
+  color: white;
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.project-content {
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-content h3 {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.3;
+  background: linear-gradient(135deg, var(--text-primary), rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .project-content p {
   font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  color: rgba(229, 231, 235, 0.85);
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.tech-section {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  border-top: 2px solid rgba(1, 193, 106, 0.3);
+}
+
+.tech-label {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(1, 193, 106, 0.9);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0.6rem;
+  padding: 0 1.5rem;
+  letter-spacing: 0.3px;
+  text-align: left;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+  padding: 0 1.5rem;
 }
 
 .tech-badge {
-  background: rgba(1, 193, 106, 0.1);
-  color: var(--accent-1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  border: 1px solid rgba(1, 193, 106, 0.3);
-  transition: all 0.3s ease;
-  font-weight: 500;
+  background: rgba(1, 193, 106, 0.12);
+  color: rgba(1, 193, 106, 1);
+  padding: 0.45rem 0.9rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(1, 193, 106, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
+  backdrop-filter: blur(5px);
 }
 
 .tech-badge .tech-icon {
@@ -442,38 +563,58 @@
 
 .tech-badge:hover {
   background: var(--accent-1);
-  color: var(--bg-primary);
+  color: white;
   border-color: var(--accent-1);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(1, 193, 106, 0.4);
 }
 
 .project-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.3rem;
-  background: transparent;
-  color: var(--accent-1);
-  border: 2px solid var(--accent-1);
-  border-radius: 50px;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2rem;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: white;
+  border: none;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: auto 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 6px 20px rgba(1, 193, 106, 0.35);
+  position: relative;
+  overflow: hidden;
   align-self: center;
-  margin: 0 auto;
+}
+
+.project-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.project-link:hover::before {
+  left: 100%;
 }
 
 .project-link:hover {
-  background: var(--accent-1);
-  color: var(--bg-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(1, 193, 106, 0.4);
+  background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(1, 193, 106, 0.5);
+  color: white;
 }
 
 .project-link svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 

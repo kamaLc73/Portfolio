@@ -80,7 +80,7 @@ function Hero({ language, data }) {
               : 'Transformer les idées en action. Créer des solutions réfléchies qui allient l\'excellence technique à l\'expérience utilisateur.'}
           </p>
           <div className="hero-ctas">
-            <a href="#projects" className="cta-button primary">{content[language].cta}</a>
+            <a href="#work" className="cta-button primary">{content[language].cta}</a>
             <a href="#contact" className="cta-button secondary">
               {content[language].secondary}
             </a>

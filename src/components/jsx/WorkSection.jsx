@@ -13,14 +13,18 @@ function WorkSection({ language, data }) {
       title: 'My Work',
       viewMore: 'View on GitHub',
       viewAll: 'View All Projects',
-      showLess: 'Show Less'
+      showLess: 'Show Less',
+      statusFinished: 'Completed',
+      statusInProgress: 'In Progress'
     },
     fr: {
       sections: ['Projets', 'Stack Technique'],
       title: 'Réalisations',
       viewMore: 'Voir sur GitHub',
       viewAll: 'Voir Tous les Projets',
-      showLess: 'Voir Moins'
+      showLess: 'Voir Moins',
+      statusFinished: 'Terminé',
+      statusInProgress: 'En cours'
     }
   }
 
@@ -138,9 +142,29 @@ function WorkSection({ language, data }) {
     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  // Réorganiser les projets pour afficher les projets prioritaires en premier
+  const priorityProjects = [
+    'Earthquake Early Warning System',
+    'ENSAM Alumni Tracking',
+    'Real-Time Stream Processing with Kafka',
+    'Brain Tumor Classification',
+    'Named Entity Recognition (NER)',
+    'Moroccan Plate Recognition'
+  ]
+
+  const sortedProjects = [...data.projects].sort((a, b) => {
+    const aIndex = priorityProjects.indexOf(a.name)
+    const bIndex = priorityProjects.indexOf(b.name)
+    
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex
+    if (aIndex !== -1) return -1
+    if (bIndex !== -1) return 1
+    return 0
+  })
+
   const filteredProjects = activeFilter === 'All' 
-    ? data.projects 
-    : data.projects.filter(p => p.category === activeFilter)
+    ? sortedProjects 
+    : sortedProjects.filter(p => p.category === activeFilter)
 
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6)
 
@@ -257,26 +281,33 @@ function WorkSection({ language, data }) {
               <div className="projects-grid">
                 {displayedProjects.map((project, idx) => (
                   <div key={idx} className="project-card">
+                    {project.image && (
+                      <div className="project-image">
+                        <img src={project.image} alt={project.name} />
+                        {project.status && (
+                          <span className={`project-status ${project.status}`}>
+                            {project.status === 'finished' 
+                              ? content[language].statusFinished 
+                              : content[language].statusInProgress}
+                          </span>
+                        )}
+                      </div>
+                    )}
                     <div className="project-content">
                       <h3>{language === 'fr' && project.name_fr ? project.name_fr : project.name}</h3>
                       <p>{language === 'fr' && project.description_fr ? project.description_fr : project.description}</p>
-                      <div className="project-tech">
-                        {project.keywords.map((tech, tidx) => {
-                          const icon = getSkillIcon(tech)
-                          const isUrl = typeof icon === 'string' && (icon.startsWith('http') || icon.startsWith('/'))
-                          const hasIcon = icon !== '⚙️' && icon !== null && icon !== undefined
-                          return (
-                            <span key={tidx} className="tech-badge">
-                              {hasIcon && isUrl ? (
-                                <img src={icon} alt={tech} className="tech-icon" />
-                              ) : hasIcon ? (
-                                <span className="tech-emoji">{icon}</span>
-                              ) : null}
-                              <span className="tech-name">{tech}</span>
-                            </span>
-                          )
-                        })}
-                      </div>
+                      {project.keywords && project.keywords.length > 0 && (
+                        <div className="tech-section">
+                          <span className="tech-label">{language === 'fr' ? 'Technologies utilisées :' : 'Technologies used:'}</span>
+                          <div className="project-tech">
+                            {project.keywords.map((tech, tidx) => (
+                              <span key={tidx} className="tech-badge">
+                                <span className="tech-name">{tech}</span>
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                     <a href={project.url} className="project-link" target="_blank" rel="noopener noreferrer">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

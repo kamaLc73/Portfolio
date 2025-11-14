@@ -253,20 +253,104 @@
   font-weight: 500;
 }
 
-.about-content {
-  max-width: 800px;
+.about-content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
   background: rgba(31, 41, 55, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 2rem;
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+.about-content {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.5), rgba(15, 23, 42, 0.7));
+  border: 2px solid rgba(1, 193, 106, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.about-content:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.7), rgba(15, 23, 42, 0.9));
+  border-color: var(--accent-1);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(1, 193, 106, 0.2);
+}
+
+.about-content::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 40%, var(--accent-1) 50%, rgba(31, 41, 55, 0.8) 60%);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.about-content:hover::before {
+  opacity: 0.5;
 }
 
 .about-bio {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: justify;
+  margin-bottom: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  flex-shrink: 0;
+  width: 420px;
+}
+
+.stat-card {
+  background: rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(31, 41, 55, 0.95);
+  border-color: var(--accent-1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(1, 193, 106, 0.3);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-1);
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 500;
 }
 
 /* Education Timeline */
@@ -844,5 +928,22 @@
 
   .cert-left {
     width: 100%;
+  }
+
+  .about-content-wrapper {
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem 1rem;
   }
 }
