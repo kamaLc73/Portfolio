@@ -9,22 +9,26 @@ function WorkSection({ language, data }) {
 
   const content = {
     en: {
-      sections: ['Projects', 'Tech Stack'],
+      sections: ['Projects', 'Tech Stack', 'Certifications'],
       title: 'My Work',
       viewMore: 'View on GitHub',
       viewAll: 'View All Projects',
       showLess: 'Show Less',
       statusFinished: 'Completed',
-      statusInProgress: 'In Progress'
+      statusInProgress: 'In Progress',
+      issuedBy: 'Issued by',
+      viewCertificate: 'View Certificate'
     },
     fr: {
-      sections: ['Projets', 'Stack Technique'],
+      sections: ['Projets', 'Stack Technique', 'Certifications'],
       title: 'Réalisations',
       viewMore: 'Voir sur GitHub',
       viewAll: 'Voir Tous les Projets',
       showLess: 'Voir Moins',
       statusFinished: 'Terminé',
-      statusInProgress: 'En cours'
+      statusInProgress: 'En cours',
+      issuedBy: 'Délivré par',
+      viewCertificate: 'Voir le Certificat'
     }
   }
 
@@ -130,14 +134,14 @@ function WorkSection({ language, data }) {
 
   const handlePrevious = () => {
     setSlideDirection('prev')
-    setActiveIndex((prev) => (prev - 1 + 2) % 2)
+    setActiveIndex((prev) => (prev - 1 + 3) % 3)
     // Scroll to section top
     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const handleNext = () => {
     setSlideDirection('next')
-    setActiveIndex((prev) => (prev + 1) % 2)
+    setActiveIndex((prev) => (prev + 1) % 3)
     // Scroll to section top
     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
@@ -237,8 +241,12 @@ function WorkSection({ language, data }) {
           {activeIndex === 0 && (
             <div className={`carousel-slide slide-${slideDirection}`}>
               <div className="carousel-header">
+                <span className="section-nav-label prev-section" onClick={handlePrevious}>
+                  {content[language].sections[(activeIndex - 1 + 3) % 3]}
+                </span>
+                
                 <button className="carousel-arrow" onClick={handlePrevious}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-left-work)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-left-work)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <defs>
                       <linearGradient id="gradient-left-work" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
@@ -250,10 +258,10 @@ function WorkSection({ language, data }) {
                   </svg>
                 </button>
                 
-                <h2 className="carousel-title">{content[language].sections[0]}</h2>
+                <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
                 
                 <button className="carousel-arrow" onClick={handleNext}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-work)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-work)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <defs>
                       <linearGradient id="gradient-right-work" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
@@ -264,6 +272,10 @@ function WorkSection({ language, data }) {
                     <polyline points="4 18 10 12 4 6"></polyline>
                   </svg>
                 </button>
+                
+                <span className="section-nav-label next-section" onClick={handleNext}>
+                  {content[language].sections[(activeIndex + 1) % 3]}
+                </span>
               </div>
               
               <div className="filter-buttons">
@@ -342,8 +354,12 @@ function WorkSection({ language, data }) {
               )}
               
               <div className="carousel-bottom-nav">
+                <button className="bottom-nav-arrow" onClick={handlePrevious}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
                 <button className="bottom-nav-arrow" onClick={handleNext}>
-                  <span>{content[language].sections[1]}</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
@@ -356,6 +372,10 @@ function WorkSection({ language, data }) {
           {activeIndex === 1 && (
             <div className={`carousel-slide slide-${slideDirection}`}>
               <div className="carousel-header">
+                <span className="section-nav-label prev-section" onClick={handlePrevious}>
+                  {content[language].sections[(activeIndex - 1 + 3) % 3]}
+                </span>
+                
                 <button className="carousel-arrow" onClick={handlePrevious}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-left-work2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <defs>
@@ -369,7 +389,7 @@ function WorkSection({ language, data }) {
                   </svg>
                 </button>
                 
-                <h2 className="carousel-title">{content[language].sections[1]}</h2>
+                <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
                 
                 <button className="carousel-arrow" onClick={handleNext}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-work2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -383,6 +403,10 @@ function WorkSection({ language, data }) {
                     <polyline points="4 18 10 12 4 6"></polyline>
                   </svg>
                 </button>
+                
+                <span className="section-nav-label next-section" onClick={handleNext}>
+                  {content[language].sections[(activeIndex + 1) % 3]}
+                </span>
               </div>
               
               <div className="skills-grid">
@@ -422,7 +446,97 @@ function WorkSection({ language, data }) {
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polyline points="15 18 9 12 15 6"></polyline>
                   </svg>
-                  <span>{content[language].sections[0]}</span>
+                </button>
+                <button className="bottom-nav-arrow" onClick={handleNext}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Certifications */}
+          {activeIndex === 2 && (
+            <div className={`carousel-slide slide-${slideDirection}`}>
+              <div className="carousel-header">
+                <span className="section-nav-label prev-section" onClick={handlePrevious}>
+                  {content[language].sections[(activeIndex - 1 + 3) % 3]}
+                </span>
+                
+                <button className="carousel-arrow" onClick={handlePrevious}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-left-work3)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <defs>
+                      <linearGradient id="gradient-left-work3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
+                        <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
+                      </linearGradient>
+                    </defs>
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                    <polyline points="20 18 14 12 20 6"></polyline>
+                  </svg>
+                </button>
+                
+                <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
+                
+                <button className="carousel-arrow" onClick={handleNext}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-work3)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <defs>
+                      <linearGradient id="gradient-right-work3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
+                        <stop offset="100%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
+                      </linearGradient>
+                    </defs>
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                    <polyline points="4 18 10 12 4 6"></polyline>
+                  </svg>
+                </button>
+                
+                <span className="section-nav-label next-section" onClick={handleNext}>
+                  {content[language].sections[(activeIndex + 1) % 3]}
+                </span>
+              </div>
+              
+              <div className="certifications-list">
+                {data.certifications.map((cert, index) => (
+                  <div key={index} className="cert-item">
+                    <div className="cert-header">
+                      <div className="cert-left">
+                        {cert.logo && (
+                          <div className="cert-logo">
+                            <img src={cert.logo} alt={`${cert.issuedBy} logo`} />
+                          </div>
+                        )}
+                        <div className="cert-info">
+                          <h3>{cert.description}</h3>
+                          <p className="cert-issuer">{content[language].issuedBy} {cert.issuedBy}</p>
+                        </div>
+                      </div>
+                      <div className="cert-right">
+                        <a 
+                          href={cert.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="cert-btn"
+                        >
+                          {content[language].viewCertificate}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="carousel-bottom-nav">
+                <button className="bottom-nav-arrow" onClick={handlePrevious}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button className="bottom-nav-arrow" onClick={handleNext}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
                 </button>
               </div>
             </div>

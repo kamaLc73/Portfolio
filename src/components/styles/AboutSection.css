@@ -17,6 +17,34 @@
   margin-bottom: 3rem;
 }
 
+/* Section Navigation Labels (prev/next subsections) */
+.section-nav-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  background: linear-gradient(90deg, rgba(1, 193, 106, 0.15), transparent);
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.section-nav-label:hover {
+  background: linear-gradient(90deg, rgba(1, 193, 106, 0.25), transparent);
+  color: rgba(255, 255, 255, 0.75);
+  transform: scale(1.05);
+}
+
+.prev-section {
+  background: linear-gradient(90deg, rgba(1, 193, 106, 0.15), transparent);
+}
+
+.next-section {
+  background: linear-gradient(90deg, transparent, rgba(1, 193, 106, 0.15));
+}
+
 .carousel-title {
   font-size: 2.5rem;
   font-weight: 700;

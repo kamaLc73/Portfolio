@@ -20,7 +20,6 @@ function Footer({ language }) {
     <footer className="footer">
       <div className="footer-content">
         <p>{data.copyright}</p>
-        <p className="made-with">{data.madeWith}</p>
       </div>
     </footer>
   )
