@@ -73,14 +73,14 @@ section::after {
   z-index: 0;
 }
 
-/* About Section - Multiple Orbs */
-.about::after {
+/* About Full Section - Multiple Orbs */
+.about-full::after {
   top: 15%;
   right: -50px;
   animation: pulse 8s ease-in-out infinite;
 }
 
-.about::before {
+.about-full::before {
   content: '';
   position: absolute;
   width: 250px;
@@ -96,63 +96,8 @@ section::after {
   animation: pulse 10s ease-in-out infinite 2s;
 }
 
-/* Education Section - Multiple Orbs */
-.education::after {
-  top: 40%;
-  left: -60px;
-  width: 350px;
-  height: 350px;
-  animation: pulse 10s ease-in-out infinite 1s;
-}
-
-.education {
-  position: relative;
-  overflow: hidden;
-}
-
-.education::before {
-  content: '';
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-3) 0%, transparent 70%);
-  filter: blur(75px);
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-  bottom: 20%;
-  right: -70px;
-  animation: pulse 9s ease-in-out infinite 3s;
-}
-
-/* Experience Section - Multiple Orbs */
-.experience::after {
-  bottom: 25%;
-  left: 10%;
-  width: 320px;
-  height: 320px;
-  animation: pulse 9s ease-in-out infinite 2s;
-}
-
-.experience::before {
-  content: '';
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-1) 0%, transparent 70%);
-  filter: blur(65px);
-  opacity: 0.09;
-  pointer-events: none;
-  z-index: 0;
-  top: 15%;
-  right: 5%;
-  animation: pulse 11s ease-in-out infinite 1s;
-}
-
-/* Skills Section - Multiple Orbs */
-.skills::after {
+/* My Work Section - Multiple Orbs */
+.my-work::after {
   top: 20%;
   right: -40px;
   width: 340px;
@@ -160,7 +105,7 @@ section::after {
   animation: pulse 11s ease-in-out infinite 1.5s;
 }
 
-.skills::before {
+.my-work::before {
   content: '';
   position: absolute;
   width: 290px;
@@ -176,29 +121,18 @@ section::after {
   animation: pulse 10s ease-in-out infinite 2.5s;
 }
 
-/* Projects Section - Multiple Orbs */
-.projects::after {
-  top: 35%;
-  left: -45px;
-  width: 330px;
-  height: 330px;
-  animation: pulse 10s ease-in-out infinite 0.5s;
-}
-
-.projects::before {
-  content: '';
-  position: absolute;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-3) 0%, transparent 70%);
-  filter: blur(70px);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-  bottom: 15%;
-  right: 12%;
-  animation: pulse 9s ease-in-out infinite 3s;
+/* Projects and Education removed sections */
+.education::after,
+.education::before,
+.experience::after,
+.experience::before,
+.skills::after,
+.skills::before,
+.projects::after,
+.projects::before,
+.certifications::after,
+.certifications::before {
+  display: none;
 }
 
 /* Contact Section - Multiple Orbs */
@@ -224,39 +158,6 @@ section::after {
   bottom: 20%;
   left: -50px;
   animation: pulse 8s ease-in-out infinite 1.5s;
-}
-
-/* Certifications Section - Orbs */
-.certifications::after {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
-  filter: blur(75px);
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-  top: 25%;
-  left: 10%;
-  animation: pulse 10s ease-in-out infinite 2s;
-}
-
-.certifications::before {
-  content: '';
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-3) 0%, transparent 70%);
-  filter: blur(70px);
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-  bottom: 30%;
-  right: -60px;
-  animation: pulse 11s ease-in-out infinite 0.5s;
 }
 
 @keyframes float1 {

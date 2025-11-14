@@ -6,22 +6,14 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data }) {
 
   const content = {
     en: {
-      about: 'About',
-      education: 'Education',
-      experience: 'Experience',
-      skills: 'Tech Stack',
-      projects: 'Projects',
-      contact: 'Contact',
-      resume: 'Resume'
+      about: 'About Me',
+      work: 'My Work',
+      contact: 'Contact Me'
     },
     fr: {
       about: 'À Propos',
-      education: 'Formation',
-      experience: 'Expérience',
-      skills: 'Stack Technique',
-      projects: 'Projets',
-      contact: 'Contact',
-      resume: 'CV'
+      work: 'Projets',
+      contact: 'Contactez-moi'
     }
   }
 
@@ -49,12 +41,15 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data }) {
         </button>
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#about" className="nav-link" onClick={handleNavClick}>{content[language].about}</a>
-          <a href="#education" className="nav-link" onClick={handleNavClick}>{content[language].education}</a>
-          <a href="#experience" className="nav-link" onClick={handleNavClick}>{content[language].experience}</a>
-          <a href="#skills" className="nav-link" onClick={handleNavClick}>{content[language].skills}</a>
-          <a href="#projects" className="nav-link" onClick={handleNavClick}>{content[language].projects}</a>
-          <a href="#contact" className="nav-link" onClick={handleNavClick}>{content[language].contact}</a>
+          <a href="#about" className="nav-link" onClick={handleNavClick}>
+            {content[language].about}
+          </a>
+          <a href="#work" className="nav-link" onClick={handleNavClick}>
+            {content[language].work}
+          </a>
+          <a href="#contact" className="nav-link" onClick={handleNavClick}>
+            {content[language].contact}
+          </a>
           
           <button className="lang-toggle" onClick={toggleLanguage}>
             {language === 'en' ? 'FR' : 'EN'}

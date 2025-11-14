@@ -66,6 +66,19 @@
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-emoji {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 6px var(--accent-1));
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-emoji {
+  transform: scale(1.2);
 }
 
 .nav-link::after {

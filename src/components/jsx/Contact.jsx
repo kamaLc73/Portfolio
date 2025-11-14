@@ -158,7 +158,7 @@ function Contact({ language, data }) {
                   </svg>
                 </div>
                 <div className="info-content">
-                  <p>Rabat, Morocco</p>
+                  <p>{language === 'en' ? 'Rabat, Morocco' : 'Rabat, Maroc'}</p>
                 </div>
               </div>
             </div>
