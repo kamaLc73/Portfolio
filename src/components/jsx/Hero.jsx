@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import '../styles/Hero.css'
 
-function Hero({ language, data }) {
+function Hero({ language, data, navigateToSubSection }) {
   const typedRef = useRef(null)
 
   useEffect(() => {
@@ -80,7 +80,15 @@ function Hero({ language, data }) {
               : 'Transformer les idées en action. Créer des solutions réfléchies qui allient l\'excellence technique à l\'expérience utilisateur.'}
           </p>
           <div className="hero-ctas">
-            <a href="#work" className="cta-button primary">{content[language].cta}</a>
+            <button 
+              onClick={(e) => {
+                e.preventDefault()
+                navigateToSubSection('work', 0)
+              }}
+              className="cta-button primary"
+            >
+              {content[language].cta}
+            </button>
             <a href="#contact" className="cta-button secondary">
               {content[language].secondary}
             </a>

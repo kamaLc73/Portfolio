@@ -75,7 +75,7 @@ function App() {
         data={data}
         navigateToSubSection={navigateToSubSection}
       />
-      <Hero language={language} data={data} />
+      <Hero language={language} data={data} navigateToSubSection={navigateToSubSection} />
       <AboutSection ref={aboutSectionRef} language={language} data={data} />
       <WorkSection ref={workSectionRef} language={language} data={data} />
       <Contact language={language} data={data} />
