@@ -5,12 +5,10 @@ function Footer({ language }) {
 
   const content = {
     en: {
-      copyright: `© ${currentYear} Kamal Dehbi.`,
-      madeWith: 'Made with ❤️ and Ctrl+C, Ctrl+V.'
+      copyright: `© ${currentYear} All rights reserved.`
     },
     fr: {
-      copyright: `© ${currentYear} Kamal Dehbi.`,
-      madeWith: 'Fait avec ❤️ et Ctrl+C, Ctrl+V.'
+      copyright: `© ${currentYear} Tous droits réservés.`
     }
   }
 

@@ -12,7 +12,7 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateT
       projects: 'Projects',
       techStack: 'Tech Stack',
       certifications: 'Certifications',
-      contact: 'Contact Me'
+      contact: 'Contact'
     },
     fr: {
       aboutMe: 'À Propos',
@@ -21,7 +21,7 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateT
       projects: 'Projets',
       techStack: 'Stack Technique',
       certifications: 'Certifications',
-      contact: 'Contactez-moi'
+      contact: 'Contacte'
     }
   }
 

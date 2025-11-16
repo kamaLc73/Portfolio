@@ -13,7 +13,7 @@ function Contact({ language, data }) {
 
   const content = {
     en: {
-      title: 'Get In Touch',
+      title: 'Contact',
       stayInTouch: 'Stay in touch',
       description: 'Don\'t hesitate to contact me to discuss projects, opportunities or simply exchange on emerging technologies in AI and Data Science.',
       formTitle: 'Send me a message',
@@ -31,7 +31,7 @@ function Contact({ language, data }) {
       error: 'Failed to send message. Please try again.'
     },
     fr: {
-      title: 'Contactez-Moi',
+      title: 'Contacte',
       stayInTouch: 'Restons en contact',
       description: 'N\'hésitez pas à me contacter pour discuter de projets, d\'opportunités ou simplement échanger sur les technologies émergentes en IA et Data Science.',
       formTitle: 'M\'envoyer un message',

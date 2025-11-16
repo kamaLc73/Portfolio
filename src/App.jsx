@@ -6,6 +6,7 @@ import AboutSection from './components/jsx/AboutSection'
 import WorkSection from './components/jsx/WorkSection'
 import Contact from './components/jsx/Contact'
 import Footer from './components/jsx/Footer'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const [language, setLanguage] = useState('en')
@@ -80,6 +81,7 @@ function App() {
       <WorkSection ref={workSectionRef} language={language} data={data} />
       <Contact language={language} data={data} />
       <Footer language={language} />
+      <Analytics />
     </div>
   )
 }
