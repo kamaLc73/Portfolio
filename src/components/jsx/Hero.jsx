@@ -19,7 +19,7 @@ function Hero({ language, data, navigateToSubSection }) {
         'Data Engineer',
         'Data Analyst',
         'Full Stack Engineer',
-        'ML & AI Engineer',
+        'ML, AI Engineer',
         'DL Engineer'
       ],
       typeSpeed: 50,
@@ -78,7 +78,7 @@ function Hero({ language, data, navigateToSubSection }) {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <div className="hero-text">
+        <div className="hero-text-head">
           <h1>
             {content[language].greeting}<br />
             {content[language].name}
@@ -87,35 +87,6 @@ function Hero({ language, data, navigateToSubSection }) {
             <span className="subtitle-prefix">{content[language].prefix}</span>
             <span ref={typedRef}></span>
           </p>
-          <p className="hero-description">
-            {isMobile ? content[language].descriptionMobile : content[language].description}
-          </p>
-          <div className="hero-ctas">
-            <button 
-              onClick={(e) => {
-                e.preventDefault()
-                navigateToSubSection('work', 0)
-              }}
-              className="cta-button primary"
-            >
-              {content[language].cta}
-            </button>
-            <a href="#contact" className="cta-button secondary">
-              {content[language].secondary}
-            </a>
-            <button 
-              onClick={handleDownloadResume}
-              className="cta-button resume"
-              title={content[language].downloadResume}
-            >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              {isMobile ? content[language].downloadResumeMobile : content[language].downloadResume}
-            </button>
-          </div>
         </div>
         <div className="hero-image">
           <div className="avatar">
@@ -127,6 +98,35 @@ function Hero({ language, data, navigateToSubSection }) {
               ? 'Available for Internships, Freelancing & Collaborations'
               : 'Disponible pour Stages, Freelance et Collaborations'}
           </div>
+        </div>
+        <p className="hero-description">
+          {isMobile ? content[language].descriptionMobile : content[language].description}
+        </p>
+        <div className="hero-ctas">
+          <button 
+            onClick={(e) => {
+              e.preventDefault()
+              navigateToSubSection('work', 0)
+            }}
+            className="cta-button primary"
+          >
+            {content[language].cta}
+          </button>
+          <a href="#contact" className="cta-button secondary">
+            {content[language].secondary}
+          </a>
+          <button 
+            onClick={handleDownloadResume}
+            className="cta-button resume"
+            title={content[language].downloadResume}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            {isMobile ? content[language].downloadResumeMobile : content[language].downloadResume}
+          </button>
         </div>
       </div>
 
