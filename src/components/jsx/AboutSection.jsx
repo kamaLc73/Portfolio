@@ -19,8 +19,9 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
     en: {
       sections: ['About Me', 'Education', 'Experience'],
       aboutTitle: 'About Me',
-      subtitle: 'Data Science & AI Student at ENSAM Rabat, Morocco',
-      bio: `I hunt patterns in chaos and build tools that think. Data scientist by curiosity, full-stack developer by craft—I live at the crossroads of AI and user experience, turning complex problems into elegant solutions that actually feel good to use.`,
+      subtitle: 'Final Year Engineering Student in Data Science & AI at ENSAM Rabat, Morocco',
+      bio: `Passionate about data, AI, and building end-to-end applications. I enjoy turning raw data into meaningful insights and ideas into clean, working products — bridging the gap between machine learning and real user needs.`,
+      bio2: `Currently focused on deepening my expertise in MLOps, LLM-powered applications, and data engineering pipelines — while wrapping up projects in data analysis and computer vision as part of my engineering thesis.`,
       institution: 'Institution',
       location: 'Location',
       now: 'Now',
@@ -32,8 +33,9 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
     fr: {
       sections: ['À Propos', 'Formation', 'Expérience'],
       aboutTitle: 'À Propos',
-      subtitle: 'Étudiant en Data Science & IA à ENSAM Rabat, Maroc',
-      bio: `Je chasse les modèles dans le chaos et je construis des outils qui pensent. Data scientist par curiosité, développeur full-stack par métier—je vis au carrefour de l'IA et de l'expérience utilisateur, transformant les problèmes complexes en solutions élégantes qui sont vraiment agréables à utiliser.`,
+      subtitle: 'Étudiant Ingénieur en dernière année en Data Science & IA à ENSAM Rabat, Maroc',
+      bio: `Passionné par la data, l'IA et le développement d'applications de bout en bout. J'aime transformer des données brutes en insights utiles et des idées en produits concrets — en faisant le lien entre le machine learning et les besoins réels des utilisateurs.`,
+      bio2: `Actuellement concentré sur MLOps, les applications propulsées par des LLMs et les pipelines de data engineering — tout en finalisant des projets en analyse de données et vision par ordinateur dans le cadre de mon projet de fin d'études.`,
       institution: 'Établissement',
       location: 'Localisation',
       now: 'Actuellement',
@@ -77,8 +79,8 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
   const getTechIcon = (techName) => {
     const iconMap = {
       'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-      'Langchain': 'https://api.iconify.design/simple-icons:langchain.svg',
-      'LangChain': 'https://api.iconify.design/simple-icons:langchain.svg',
+      'Langchain': 'https://api.iconify.design/simple-icons:langchain.svg?color=white',
+      'LangChain': 'https://api.iconify.design/simple-icons:langchain.svg?color=white',
       'RAG': '🔗',
       'Groq API': '⚡',
       'Streamlit': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg',
@@ -92,7 +94,10 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
       'Linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
       'SQLAlchemy': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg',
       'Sqoop': '🔄',
-      'CNN': '🧠'
+      'CNN': '🧠',
+      'YOLO': 'https://api.iconify.design/simple-icons:ultralytics.svg?color=white',
+      'Llama': 'https://api.iconify.design/simple-icons:meta.svg?color=white',
+      'MarianMT': 'https://api.iconify.design/mdi:translate.svg?color=white'
     }
     return iconMap[techName] || '⚙️'
   }
@@ -146,6 +151,7 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
               <div className="about-content-wrapper">
                 <div className="about-content">
                   <p className="about-bio">{content[language].bio}</p>
+                  <p className="about-bio about-bio-2">{content[language].bio2}</p>
                 </div>
                 
                 <div className="stats-grid">

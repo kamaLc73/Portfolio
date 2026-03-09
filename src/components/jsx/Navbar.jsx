@@ -81,6 +81,8 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateT
           <a href="#contact" className="nav-link" onClick={handleNavClick}>
             {content[language].contact}
           </a>
+
+          <div className="nav-separator" />
           
           <button className="lang-toggle" onClick={toggleLanguage}>
             {language === 'en' ? 'FR' : 'EN'}

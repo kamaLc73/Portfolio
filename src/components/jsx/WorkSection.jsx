@@ -1,11 +1,14 @@
 import { useState, useEffect, forwardRef, useImperativeHandle } from 'react'
+import { createPortal } from 'react-dom'
 import '../styles/WorkSection.css'
 
 const WorkSection = forwardRef(({ language, data }, ref) => {
+
   const [activeIndex, setActiveIndex] = useState(0)
   const [slideDirection, setSlideDirection] = useState('next')
   const [activeFilter, setActiveFilter] = useState('All')
   const [showAll, setShowAll] = useState(false)
+  const [lightboxImage, setLightboxImage] = useState(null)
 
   useImperativeHandle(ref, () => ({
     navigateToSlide: (index) => {
@@ -45,23 +48,29 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
   const categories = {
     en: {
       all: 'All',
-      ai: 'Artificial Intelligence',
-      ml: 'Machine Learning',
-      web: 'Web Development',
-      medical: 'Medical AI'
+      'computer vision': 'Computer Vision',
+      nlp: 'NLP',
+      fullstack: 'Dev Fullstack',
+      cnn: 'CNN',
+      'big data': 'Big Data',
+      'data analysis': 'Data Analysis',
+      others: 'Others'
     },
     fr: {
       all: 'Tous',
-      ai: 'Intelligence Artificielle',
-      ml: 'Machine Learning',
-      web: 'Développement Web',
-      medical: 'IA Médicale'
+      'computer vision': 'Vision par Ordinateur',
+      nlp: 'NLP',
+      fullstack: 'Dev Fullstack',
+      cnn: 'CNN',
+      'big data': 'Big Data',
+      'data analysis': 'Analyse de Données',
+      others: 'Autres'
     }
   }
 
   const categoryLabels = {
     programming: language === 'en' ? 'Programming Languages' : 'Langages de Programmation',
-    machinelearning: language === 'en' ? 'Machine Learning & AI' : 'Machine Learning - IA',
+    machinelearning: language === 'en' ? 'ML - DL - Gen AI' : 'ML - DL - IA Générative',
     dataanalysis: language === 'en' ? 'Data Analysis & Visualization' : 'Analyse de Données - Viz',
     bigdata: language === 'en' ? 'Big Data' : 'Big Data',
     webdev: language === 'en' ? 'Web Development' : 'Développement Web',
@@ -123,10 +132,13 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
 
   const filterButtons = [
     { key: 'All', category: null },
-    { key: 'AI', category: 'AI' },
-    { key: 'ML', category: 'ML' },
-    { key: 'Web', category: 'Web' },
-    { key: 'Medical', category: 'Medical' }
+    { key: 'Computer Vision', category: 'Computer Vision' },
+    { key: 'NLP', category: 'NLP' },
+    { key: 'Fullstack', category: 'Fullstack' },
+    { key: 'CNN', category: 'CNN' },
+    { key: 'Big Data', category: 'Big Data' },
+    { key: 'Data Analysis', category: 'Data Analysis' },
+    { key: 'Others', category: 'Others' }
   ]
 
   // Auto-rotate carousel every 30 seconds with slide direction
@@ -176,9 +188,27 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
     return 0
   })
 
-  const filteredProjects = activeFilter === 'All' 
-    ? sortedProjects 
-    : sortedProjects.filter(p => p.category === activeFilter)
+  const filteredProjects = activeFilter === 'All'
+    ? sortedProjects
+    : sortedProjects.filter(p =>
+        Array.isArray(p.category)
+          ? p.category.includes(activeFilter)
+          : p.category === activeFilter
+      )
+
+  const getCategoryAccent = (category) => {
+    const cat = Array.isArray(category) ? category[0] : category
+    const map = {
+      'Computer Vision': '#01C16A',
+      'NLP':             '#01C16A',
+      'Fullstack':       '#01C16A',
+      'CNN':             '#01C16A',
+      'Big Data':        '#01C16A',
+      'Data Analysis':   '#01C16A',
+      'Others':          '#01C16A',
+    }
+    return map[cat] || '#01C16A'
+  }
 
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6)
 
@@ -201,8 +231,11 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
       'OpenCV': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg',
       'XGBoost': '🚀',
       'Spacy': 'https://upload.wikimedia.org/wikipedia/commons/8/88/SpaCy_logo.svg',
-      'LangChain': 'https://api.iconify.design/simple-icons:langchain.svg',
-      'YOLO': '👁️',
+      'LangChain': 'https://api.iconify.design/simple-icons:langchain.svg?color=white',
+      'YOLO': 'https://api.iconify.design/simple-icons:ultralytics.svg?color=white',
+      'Llama': 'https://api.iconify.design/simple-icons:meta.svg?color=white',
+      'Llama 3.3': 'https://api.iconify.design/simple-icons:meta.svg?color=white',
+      'MarianMT': 'https://api.iconify.design/mdi:translate.svg?color=white',
       'Pandas': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
       'NumPy': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg',
       'Matplotlib': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg',
@@ -222,15 +255,20 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
       'Java EE': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
       'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
       'Streamlit': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg',
+      'Spring Boot': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
+      'Gradio': 'https://api.iconify.design/simple-icons:gradio.svg?color=white',
       'Bootstrap': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
       'Jinja': '/icons/Jinja_logo.png',
       'SQLAlchemy': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg',
       'Beautiful Soup': '🍜',
       'Selenium': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg',
+      'Discord': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-original.svg',
       'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
       'GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
       'Linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
       'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+      'Kubernetes': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg',
+      'Jenkins': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg',
       'VS Code': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
       'AWS Cloud': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
       'MySQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
@@ -294,6 +332,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
                     key={filter.key}
                     className={`filter-btn ${activeFilter === filter.key ? 'active' : ''}`}
                     onClick={() => setActiveFilter(filter.key)}
+                    style={{'--btn-accent': getCategoryAccent(filter.key === 'All' ? 'Data Analysis' : filter.key)}}
                   >
                     {categories[language][filter.key.toLowerCase()]}
                   </button>
@@ -301,26 +340,30 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
               </div>
 
               <div className="projects-grid">
-                {displayedProjects.map((project, idx) => (
-                  <div key={idx} className="project-card">
+                {displayedProjects.map((project, idx) => {
+                  const accent = getCategoryAccent(project.category)
+                  return (
+                  <div key={idx} className="project-card" style={{'--card-accent': accent}}>
+                    <div className="project-header">
+                      <h3>{language === 'fr' && project.name_fr ? project.name_fr : project.name}</h3>
+                      {project.status && (
+                        <span className={`project-status ${project.status}`}>
+                          {project.status === 'finished'
+                            ? content[language].statusFinished
+                            : content[language].statusInProgress}
+                        </span>
+                      )}
+                    </div>
                     {project.image && (
-                      <div className="project-image">
+                      <div className="project-image" onClick={() => setLightboxImage(project.image)} title="Click to enlarge">
                         <img src={project.image} alt={project.name} />
-                        {project.status && (
-                          <span className={`project-status ${project.status}`}>
-                            {project.status === 'finished' 
-                              ? content[language].statusFinished 
-                              : content[language].statusInProgress}
-                          </span>
-                        )}
                       </div>
                     )}
                     <div className="project-content">
-                      <h3>{language === 'fr' && project.name_fr ? project.name_fr : project.name}</h3>
                       <p>{language === 'fr' && project.description_fr ? project.description_fr : project.description}</p>
                       {project.keywords && project.keywords.length > 0 && (
-                        <div className="tech-section">
-                          <span className="tech-label">{language === 'fr' ? 'Technologies utilisées :' : 'Technologies used:'}</span>
+                        <>
+                          <div className="project-divider" />
                           <div className="project-tech">
                             {project.keywords.map((tech, tidx) => (
                               <span key={tidx} className="tech-badge">
@@ -328,7 +371,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
                               </span>
                             ))}
                           </div>
-                        </div>
+                        </>
                       )}
                     </div>
                     <a href={project.url} className="project-link" target="_blank" rel="noopener noreferrer">
@@ -338,7 +381,8 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
                       {content[language].viewMore}
                     </a>
                   </div>
-                ))}
+                  )
+                })}
               </div>
 
               {filteredProjects.length > 6 && (
@@ -553,6 +597,19 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
           )}
         </div>
       </div>
+
+      {lightboxImage && createPortal(
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <button className="lightbox-close" onClick={() => setLightboxImage(null)}>✕</button>
+          <img
+            src={lightboxImage}
+            alt="Project preview"
+            className="lightbox-img"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>,
+        document.body
+      )}
     </section>
   )
 })

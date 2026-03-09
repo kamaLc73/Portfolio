@@ -27,166 +27,8 @@ body {
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
-}
-
-/* Background Green Shadows/Orbs */
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 0;
-}
-
-body::before {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--accent-1) 0%, transparent 70%);
-  top: 10%;
-  right: -200px;
-  animation: float1 20s ease-in-out infinite;
-}
-
-body::after {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
-  bottom: 15%;
-  left: -150px;
-  animation: float2 18s ease-in-out infinite;
-}
-
-/* Additional Floating Orbs */
-section::after {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-1) 0%, transparent 70%);
-  filter: blur(80px);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* About Full Section - Multiple Orbs */
-.about-full::after {
-  top: 15%;
-  right: -50px;
-  animation: pulse 8s ease-in-out infinite;
-}
-
-.about-full::before {
-  content: '';
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
-  filter: blur(70px);
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-  bottom: 10%;
-  left: -80px;
-  animation: pulse 10s ease-in-out infinite 2s;
-}
-
-/* My Work Section - Multiple Orbs */
-.my-work::after {
-  top: 20%;
-  right: -40px;
-  width: 340px;
-  height: 340px;
-  animation: pulse 11s ease-in-out infinite 1.5s;
-}
-
-.my-work::before {
-  content: '';
-  position: absolute;
-  width: 290px;
-  height: 290px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
-  filter: blur(80px);
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-  bottom: 30%;
-  left: 8%;
-  animation: pulse 10s ease-in-out infinite 2.5s;
-}
-
-/* Projects and Education removed sections */
-.education::after,
-.education::before,
-.experience::after,
-.experience::before,
-.skills::after,
-.skills::before,
-.projects::after,
-.projects::before,
-.certifications::after,
-.certifications::before {
-  display: none;
-}
-
-/* Contact Section - Multiple Orbs */
-.contact::after {
-  top: 50%;
-  right: 5%;
-  width: 310px;
-  height: 310px;
-  animation: pulse 9s ease-in-out infinite 2.5s;
-}
-
-.contact::before {
-  content: '';
-  position: absolute;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-1) 0%, transparent 70%);
-  filter: blur(60px);
-  opacity: 0.09;
-  pointer-events: none;
-  z-index: 0;
-  bottom: 20%;
-  left: -50px;
-  animation: pulse 8s ease-in-out infinite 1.5s;
-}
-
-@keyframes float1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-100px, 100px) scale(1.1);
-  }
-}
-
-@keyframes float2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(100px, -100px) scale(1.15);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.08;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.12;
-  }
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 html {
@@ -416,14 +258,13 @@ a:hover {
 
 /* Scroll Reveal Animation */
 section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 1;
+  transform: none;
 }
 
 section.reveal {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Hero section should always be visible */
