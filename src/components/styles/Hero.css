@@ -350,7 +350,7 @@
   }
 
   .availability-badge {
-    margin: 0 auto 1.5rem;
+    display: none;
   }
 
   .hero h1 {

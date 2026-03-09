@@ -9,6 +9,17 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
   const [activeFilter, setActiveFilter] = useState('All')
   const [showAll, setShowAll] = useState(false)
   const [lightboxImage, setLightboxImage] = useState(null)
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768
+      setIsMobile(mobile)
+      if (!mobile) setShowAll(false)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useImperativeHandle(ref, () => ({
     navigateToSlide: (index) => {
@@ -210,7 +221,8 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
     return map[cat] || '#01C16A'
   }
 
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6)
+  const defaultCount = isMobile ? 3 : 6
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, defaultCount)
 
   // Skill icon mapping
   const getSkillIcon = (skillName) => {
@@ -385,7 +397,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
                 })}
               </div>
 
-              {filteredProjects.length > 6 && (
+              {filteredProjects.length > defaultCount && (
                 <div className="view-all-container">
                   <button 
                     className="view-all-btn" 

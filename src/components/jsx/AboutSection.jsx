@@ -19,7 +19,8 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
     en: {
       sections: ['About Me', 'Education', 'Experience'],
       aboutTitle: 'About Me',
-      subtitle: 'Final Year Engineering Student in Data Science & AI at ENSAM Rabat, Morocco',
+      subtitle: <>Final Year Engineering Student in Data Science & AI<span className="subtitle-location"> at ENSAM Rabat, Morocco</span></>,
+      subtitlePlain: 'Final Year Engineering Student in Data Science & AI at ENSAM Rabat, Morocco',
       bio: `Passionate about data, AI, and building end-to-end applications. I enjoy turning raw data into meaningful insights and ideas into clean, working products — bridging the gap between machine learning and real user needs.`,
       bio2: `Currently focused on deepening my expertise in MLOps, LLM-powered applications, and data engineering pipelines — while wrapping up projects in data analysis and computer vision as part of my engineering thesis.`,
       institution: 'Institution',
@@ -33,7 +34,8 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
     fr: {
       sections: ['À Propos', 'Formation', 'Expérience'],
       aboutTitle: 'À Propos',
-      subtitle: 'Étudiant Ingénieur en dernière année en Data Science & IA à ENSAM Rabat, Maroc',
+      subtitle: <>Étudiant Ingénieur en dernière année en Data Science & IA<span className="subtitle-location"> à ENSAM Rabat, Maroc</span></>,
+      subtitlePlain: 'Étudiant Ingénieur en dernière année en Data Science & IA à ENSAM Rabat, Maroc',
       bio: `Passionné par la data, l'IA et le développement d'applications de bout en bout. J'aime transformer des données brutes en insights utiles et des idées en produits concrets — en faisant le lien entre le machine learning et les besoins réels des utilisateurs.`,
       bio2: `Actuellement concentré sur MLOps, les applications propulsées par des LLMs et les pipelines de data engineering — tout en finalisant des projets en analyse de données et vision par ordinateur dans le cadre de mon projet de fin d'études.`,
       institution: 'Établissement',
