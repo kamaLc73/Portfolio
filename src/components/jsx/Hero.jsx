@@ -119,13 +119,20 @@ function Hero({ language, data, navigateToSubSection }) {
           <div className="avatar">
             <img src="/logos/kamal.jpg" alt="Kamal Dehbi" />
           </div>
-          <div className="availability-badge">
+          <div className="availability-badge availability-badge--desktop">
             <span className="status-dot"></span>
             {language === 'en' 
               ? 'Available for Internships, Freelancing & Collaborations'
               : 'Disponible pour Stages, Freelance et Collaborations'}
           </div>
         </div>
+      </div>
+
+      <div className="availability-badge availability-badge--mobile">
+        <span className="status-dot"></span>
+        {language === 'en'
+          ? 'Available for Internships, Freelancing & Collaborations'
+          : 'Disponible pour Stages, Freelance et Collaborations'}
       </div>
       
       <div className="scroll-indicator">

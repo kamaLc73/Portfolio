@@ -1,8 +1,15 @@
 import '../styles/Navbar.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateToSubSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const content = {
     en: {
@@ -12,6 +19,7 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateT
       projects: 'Projects',
       techStack: 'Tech Stack',
       certifications: 'Certifications',
+      certificationsMobile: 'Certificats',
       contact: 'Contact'
     },
     fr: {
@@ -21,6 +29,7 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateT
       projects: 'Projets',
       techStack: 'Stack Technique',
       certifications: 'Certifications',
+      certificationsMobile: 'Certificats',
       contact: 'Contacte'
     }
   }
@@ -76,7 +85,7 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateT
             {content[language].techStack}
           </a>
           <a href="#certifications" className="nav-link" onClick={(e) => handleSubSectionClick(e, 'work', 2)}>
-            {content[language].certifications}
+            {isMobile ? content[language].certificationsMobile : content[language].certifications}
           </a>
           <a href="#contact" className="nav-link" onClick={handleNavClick}>
             {content[language].contact}

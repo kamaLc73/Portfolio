@@ -63,7 +63,15 @@
   max-width: 100%;
 }
 
-.status-dot {
+/* Mobile badge: hidden on desktop, shown under subtitle on mobile */
+.availability-badge--mobile {
+  display: none;
+}
+
+/* Desktop badge: shown in hero-image column */
+.availability-badge--desktop {
+  display: inline-flex;
+}
   width: 8px;
   height: 8px;
   background: var(--accent-1);
@@ -340,121 +348,160 @@
 
 /* Small Tablet: 481px to 768px */
 @media (max-width: 968px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: center;
+    width: 100%;
   }
 
   .hero-text {
-    text-align: center;
+    text-align: left;
   }
 
-  .availability-badge {
+  .availability-badge--desktop {
     display: none;
   }
 
+  .availability-badge--mobile {
+    display: inline-flex;
+    margin: 1.2rem auto 0;
+    align-self: center;
+  }
+
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .hero-description {
     font-size: 1rem;
     max-width: 100%;
-    margin: 0 auto 2rem;
+    margin: 0 0 1.5rem;
   }
 
   .avatar {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
 
   .hero-image {
-    order: -1;
+    order: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-ctas {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
   .cta-button {
     flex: 1;
-    min-width: 130px;
+    min-width: 120px;
     max-width: 200px;
-    padding: 10px 16px;
-    font-size: 0.9rem;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  .cta-button.resume svg {
+    display: none;
+  }
+
+  .cta-button.resume svg {
+    display: none;
   }
 
   .scroll-indicator {
     display: none;
   }
 }
-
 /* Mobile: 320px to 480px */
 @media (max-width: 480px) {
   .hero {
-    padding: 75px 15px 50px;
+    padding: 75px 12px 50px;
     min-height: auto;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
   }
 
   .hero-text {
-    text-align: center;
+    text-align: left;
   }
 
-  .availability-badge {
-    font-size: 0.8rem;
+  .availability-badge--mobile {
+    font-size: 0.75rem;
     padding: 0.4rem 0.8rem;
-    margin: 0 auto 1rem;
+    margin: 1rem auto 0;
     display: inline-flex;
+    text-align: center;
+    max-width: 90%;
   }
 
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1.2;
   }
 
   .hero-subtitle {
-    font-size: 1.05rem;
-    min-height: 40px;
+    font-size: 0.95rem;
+    min-height: 36px;
   }
 
   .hero-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     max-width: 100%;
-    margin: 0 auto 1.5rem;
+    margin: 0 0 1.2rem;
   }
 
   .avatar {
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
   }
 
   .hero-image {
-    order: -1;
+    order: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-ctas {
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .cta-button {
-    width: 100%;
-    max-width: 100%;
-    padding: 12px 20px;
-    font-size: 0.9rem;
+    flex: 1;
+    min-width: 0;
+    padding: 8px 6px;
+    font-size: 0.72rem;
     justify-content: center;
+    white-space: nowrap;
+  }
+
+  .cta-button.resume svg {
+    display: none;
   }
 
   .scroll-indicator {
