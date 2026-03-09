@@ -1,9 +1,16 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Typed from 'typed.js'
 import '../styles/Hero.css'
 
 function Hero({ language, data, navigateToSubSection }) {
   const typedRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -31,6 +38,8 @@ function Hero({ language, data, navigateToSubSection }) {
       greeting: "Hi, I'm",
       name: "Kamal Dehbi",
       prefix: "I'm ",
+      description: 'Turning insights into action. Creating thoughtful solutions that blend technical excellence with user experience.',
+      descriptionMobile: 'Building AI & data solutions that turn raw insights into real impact.',
       cta: 'View My Work',
       secondary: 'Get In Touch',
       downloadResume: 'Download Resume'
@@ -39,6 +48,8 @@ function Hero({ language, data, navigateToSubSection }) {
       greeting: "Salut, je suis",
       name: "Kamal Dehbi",
       prefix: "Je suis ",
+      description: "Transformer les idées en action. Créer des solutions réfléchies qui allient l'excellence technique à l'expérience utilisateur.",
+      descriptionMobile: "Construire des solutions IA & data qui transforment les insights en impact.",
       cta: 'Voir Mon Travail',
       secondary: 'Me Contacter',
       downloadResume: 'Télécharger CV'
@@ -75,9 +86,7 @@ function Hero({ language, data, navigateToSubSection }) {
             <span ref={typedRef}></span>
           </p>
           <p className="hero-description">
-            {language === 'en' 
-              ? 'Turning insights into action. Creating thoughtful solutions that blend technical excellence with user experience.'
-              : 'Transformer les idées en action. Créer des solutions réfléchies qui allient l\'excellence technique à l\'expérience utilisateur.'}
+            {isMobile ? content[language].descriptionMobile : content[language].description}
           </p>
           <div className="hero-ctas">
             <button 

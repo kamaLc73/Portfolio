@@ -1188,7 +1188,11 @@
   }
 
   .company-logo {
-    display: none;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0.3rem;
+    border-radius: 7px;
   }
 
   .exp-header-top {

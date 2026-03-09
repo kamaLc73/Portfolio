@@ -1,7 +1,15 @@
 import '../styles/Contact.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Contact({ language, data }) {
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +24,7 @@ function Contact({ language, data }) {
       title: 'Contact',
       stayInTouch: 'Stay in touch',
       description: 'Don\'t hesitate to contact me to discuss projects, opportunities or simply exchange on emerging technologies in AI and Data Science.',
+      descriptionMobile: 'Open to projects, opportunities & tech discussions.',
       formTitle: 'Send me a message',
       phone: 'Phone',
       location: 'Location',
@@ -34,6 +43,7 @@ function Contact({ language, data }) {
       title: 'Contacte',
       stayInTouch: 'Restons en contact',
       description: 'N\'hésitez pas à me contacter pour discuter de projets, d\'opportunités ou simplement échanger sur les technologies émergentes en IA et Data Science.',
+      descriptionMobile: 'Ouvert aux projets, opportunités et discussions tech.',
       formTitle: 'M\'envoyer un message',
       phone: 'Téléphone',
       location: 'Localisation',

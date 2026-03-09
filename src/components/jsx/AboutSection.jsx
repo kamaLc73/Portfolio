@@ -4,6 +4,13 @@ import '../styles/AboutSection.css'
 const AboutSection = forwardRef(({ language, data }, ref) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [slideDirection, setSlideDirection] = useState('next')
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useImperativeHandle(ref, () => ({
     navigateToSlide: (index) => {
@@ -22,7 +29,9 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
       subtitle: <>Final Year Engineering Student in Data Science & AI<span className="subtitle-location"> at ENSAM Rabat, Morocco</span></>,
       subtitlePlain: 'Final Year Engineering Student in Data Science & AI at ENSAM Rabat, Morocco',
       bio: `Passionate about data, AI, and building end-to-end applications. I enjoy turning raw data into meaningful insights and ideas into clean, working products — bridging the gap between machine learning and real user needs.`,
+      bioMobile: `Passionate about data & AI — turning raw data into insights and ideas into working products.`,
       bio2: `Currently focused on deepening my expertise in MLOps, LLM-powered applications, and data engineering pipelines — while wrapping up projects in data analysis and computer vision as part of my engineering thesis.`,
+      bio2Mobile: `Deepening expertise in MLOps, LLMs & data engineering pipelines.`,
       institution: 'Institution',
       location: 'Location',
       now: 'Now',
@@ -37,7 +46,9 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
       subtitle: <>Étudiant Ingénieur en dernière année en Data Science & IA<span className="subtitle-location"> à ENSAM Rabat, Maroc</span></>,
       subtitlePlain: 'Étudiant Ingénieur en dernière année en Data Science & IA à ENSAM Rabat, Maroc',
       bio: `Passionné par la data, l'IA et le développement d'applications de bout en bout. J'aime transformer des données brutes en insights utiles et des idées en produits concrets — en faisant le lien entre le machine learning et les besoins réels des utilisateurs.`,
+      bioMobile: `Passionné par la data & l'IA — je transforme les données brutes en insights et les idées en produits concrets.`,
       bio2: `Actuellement concentré sur MLOps, les applications propulsées par des LLMs et les pipelines de data engineering — tout en finalisant des projets en analyse de données et vision par ordinateur dans le cadre de mon projet de fin d'études.`,
+      bio2Mobile: `Concentré sur MLOps, les LLMs et les pipelines de data engineering.`,
       institution: 'Établissement',
       location: 'Localisation',
       now: 'Actuellement',
@@ -152,8 +163,8 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
               <p className="about-subtitle">{content[language].subtitle}</p>
               <div className="about-content-wrapper">
                 <div className="about-content">
-                  <p className="about-bio">{content[language].bio}</p>
-                  <p className="about-bio about-bio-2">{content[language].bio2}</p>
+                  <p className="about-bio">{isMobile ? content[language].bioMobile : content[language].bio}</p>
+                  <p className="about-bio about-bio-2">{isMobile ? content[language].bio2Mobile : content[language].bio2}</p>
                 </div>
                 
                 <div className="stats-grid">
@@ -379,12 +390,17 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
                         </div>
                       </div>
                       <div className="exp-description">
-                        {(language === 'fr' && job.description_fr ? job.description_fr : job.description)
-                          .split('*')
-                          .filter(item => item.trim())
-                          .map((point, idx) => (
-                            <p key={idx}>• {point.trim()}</p>
-                          ))}
+                        {(() => {
+                          const desc = isMobile
+                            ? (language === 'fr' && job.description_fr_mobile ? job.description_fr_mobile : (job.description_mobile || (language === 'fr' && job.description_fr ? job.description_fr : job.description)))
+                            : (language === 'fr' && job.description_fr ? job.description_fr : job.description)
+                          return desc
+                            .split('*')
+                            .filter(item => item.trim())
+                            .map((point, idx) => (
+                              <p key={idx}>• {point.trim()}</p>
+                            ))
+                        })()}
                       </div>
                       {job.technologies && job.technologies.length > 0 && (
                         <div className="exp-technologies">

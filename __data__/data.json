@@ -135,6 +135,8 @@
             "id": 497180,
             "description": "* Developed a chatbot for the Fairlynk platform using a RAG pipeline, LangChain, external LLM APIs (Llama 3.3).\n* Supported multilingual questions in French, English, and Spanish.\n* Built the UI with Streamlit, customized with HTML/CSS.",
             "description_fr": "* Développé un chatbot pour la plateforme Fairlynk avec un pipeline RAG, LangChain + APIs LLM externes (Llama 3.3).\n* Prise en charge des questions multilingues en français, anglais et espagnol.\n* Interface utilisateur construite avec Streamlit, personnalisée en HTML/CSS.",
+            "description_mobile": "* RAG chatbot for Fairlynk using LangChain & Llama 3.3 with multilingual support (FR / EN / ES).\n* UI built with Streamlit, customized with HTML/CSS.",
+            "description_fr_mobile": "* Chatbot RAG pour Fairlynk via LangChain & Llama 3.3, support multilingue (FR / EN / ES).\n* Interface Streamlit personnalisée en HTML/CSS.",
             "technologies": [
                 "Python",
                 "LangChain",
@@ -162,6 +164,8 @@
             "id": 497181,
             "description": "* Built a Flask API for license plate detection and recognition from images with YOLO models.\n* Reached 95% accuracy (mAP) on Moroccan plates.\n* Along with a PostgreSQL database.\n* Deployed the application with Docker containers.",
             "description_fr": "* Création d'une API Flask pour la détection et la reconnaissance de plaques d'immatriculation avec des modèles YOLO.\n* Atteint 95% de précision (mAP) sur les plaques marocaines.\n* Avec une base de données PostgreSQL.\n* Déploiement de l'application avec des conteneurs Docker.",
+            "description_mobile": "* Flask API for license plate detection & recognition using YOLO — 95% accuracy (mAP).\n* Deployed with Docker & PostgreSQL.",
+            "description_fr_mobile": "* API Flask de détection de plaques avec YOLO — 95% de précision (mAP).\n* Déployé avec Docker & PostgreSQL.",
             "technologies": [
                 "Python",
                 "Flask",
