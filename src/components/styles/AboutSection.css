@@ -961,15 +961,156 @@
     font-size: 0.85rem;
   }
 
-  .exp-meta {
-    flex-direction: column;
+  /* === Education mobile === */
+  .education-timeline {
+    padding: 0 8px;
+  }
+
+  .education-item {
+    margin-bottom: 1.2rem;
+  }
+
+  .edu-date-badge {
+    display: block;
+    text-align: center;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .education-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .edu-header {
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .institution-logo {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 8px;
+    padding: 0.4rem;
+  }
+
+  .edu-title-group h3 {
+    font-size: 1rem;
+  }
+
+  .edu-field {
+    font-size: 0.82rem;
+  }
+
+  .edu-details {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+  }
+
+  .detail-row {
     gap: 0.4rem;
-    align-items: flex-start;
+    margin-bottom: 0.4rem;
+    font-size: 0.82rem;
+  }
+
+  .detail-label {
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+
+  /* === Experience mobile === */
+  .experience-timeline {
+    padding: 0;
+  }
+
+  .experience-item {
+    margin-bottom: 1.2rem;
+  }
+
+  .timeline-marker {
+    display: none;
+  }
+
+  .experience-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .exp-header-top {
+    gap: 0.7rem;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-title-group h3 {
+    font-size: 1rem;
+  }
+
+  .exp-company {
+    font-size: 0.85rem;
+  }
+
+  .exp-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .exp-meta-left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .exp-period {
+    font-size: 0.8rem;
+  }
+
+  .exp-location {
+    font-size: 0.78rem;
   }
 
   .project-link-btn-header {
-    padding: 0.5rem 1rem;
-    font-size: 0.82rem;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .exp-description {
+    margin-top: 0.8rem;
+  }
+
+  .exp-description p {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.55;
+  }
+
+  .exp-technologies {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+  }
+
+  .exp-technologies h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-tags {
+    gap: 0.35rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    gap: 0.3rem;
+  }
+
+  .tech-icon {
+    width: 13px;
+    height: 13px;
   }
 }
 
@@ -1037,72 +1178,46 @@
     font-size: 0.82rem;
   }
 
-  .institution-logo,
-  .company-logo {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-  }
-
-  .edu-title-group h3 {
-    font-size: 1.05rem;
-  }
-
-  .edu-field {
-    font-size: 0.82rem;
-  }
-
-  .detail-row {
-    flex-direction: column;
-    gap: 0.15rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .detail-label {
-    min-width: auto;
-    font-size: 0.8rem;
-  }
-
-  .detail-value {
-    font-size: 0.85rem;
-  }
-
-  .experience-card {
-    padding: 1rem;
-  }
-
-  .exp-header h3 {
-    font-size: 1rem;
-  }
-
-  .exp-company {
-    font-size: 0.9rem;
-  }
-
-  .exp-header-top {
-    gap: 0.8rem;
+  /* Education 480px */
+  .institution-logo {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0.3rem;
+    border-radius: 7px;
   }
 
   .company-logo {
     display: none;
   }
 
-  .exp-description p {
-    font-size: 0.85rem;
+  .exp-header-top {
+    border-bottom: none;
   }
 
-  .exp-technologies h4 {
+  .exp-technologies {
+    border-top: none;
+  }
+
+  .edu-title-group h3 {
+    font-size: 0.95rem;
+  }
+
+  .detail-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+  }
+
+  .detail-label {
+    min-width: auto;
+    font-size: 0.78rem;
+  }
+
+  .detail-value {
     font-size: 0.82rem;
-  }
-
-  .tech-tag {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.65rem;
-  }
-
-  .tech-icon {
-    width: 14px;
-    height: 14px;
   }
 
   .cert-header {
