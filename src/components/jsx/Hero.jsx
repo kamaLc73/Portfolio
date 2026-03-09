@@ -19,8 +19,8 @@ function Hero({ language, data, navigateToSubSection }) {
         'Data Engineer',
         'Data Analyst',
         'Full Stack Engineer',
-        'Machine Learning, AI Engineer',
-        'Deep Learning Engineer'
+        'ML & AI Engineer',
+        'DL Engineer'
       ],
       typeSpeed: 50,
       backSpeed: 30,
