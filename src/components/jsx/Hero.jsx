@@ -42,7 +42,8 @@ function Hero({ language, data, navigateToSubSection }) {
       descriptionMobile: 'Building AI & data solutions that turn raw insights into real impact.',
       cta: 'View My Work',
       secondary: 'Get In Touch',
-      downloadResume: 'Download Resume'
+      downloadResume: 'Download Resume',
+      downloadResumeMobile: 'CV'
     },
     fr: {
       greeting: "Salut, je suis",
@@ -52,7 +53,8 @@ function Hero({ language, data, navigateToSubSection }) {
       descriptionMobile: "Construire des solutions IA & data qui transforment les insights en impact.",
       cta: 'Voir Mon Travail',
       secondary: 'Me Contacter',
-      downloadResume: 'Télécharger CV'
+      downloadResume: 'Télécharger CV',
+      downloadResumeMobile: 'CV'
     }
   }
 
@@ -111,7 +113,7 @@ function Hero({ language, data, navigateToSubSection }) {
                 <polyline points="7 10 12 15 17 10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
-              {content[language].downloadResume}
+              {isMobile ? content[language].downloadResumeMobile : content[language].downloadResume}
             </button>
           </div>
         </div>

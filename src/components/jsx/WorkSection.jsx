@@ -34,6 +34,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
   const content = {
     en: {
       sections: ['Projects', 'Tech Stack', 'Certifications'],
+      sectionsMobile: ['Projects', 'Tech Stack', 'Certificats'],
       title: 'My Work',
       viewMore: 'View on GitHub',
       viewAll: 'View All Projects',
@@ -45,6 +46,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
     },
     fr: {
       sections: ['Projets', 'Stack Technique', 'Certifications'],
+      sectionsMobile: ['Projets', 'Stack Technique', 'Certificats'],
       title: 'Réalisations',
       viewMore: 'Voir sur GitHub',
       viewAll: 'Voir Tous les Projets',
@@ -318,7 +320,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
                   </svg>
                 </button>
                 
-                <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
+                <h2 className="carousel-title">{(isMobile ? content[language].sectionsMobile : content[language].sections)[activeIndex]}</h2>
                 
                 <button className="carousel-arrow" onClick={handleNext}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-work)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -455,7 +457,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
                   </svg>
                 </button>
                 
-                <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
+                <h2 className="carousel-title">{(isMobile ? content[language].sectionsMobile : content[language].sections)[activeIndex]}</h2>
                 
                 <button className="carousel-arrow" onClick={handleNext}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-work2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -543,7 +545,7 @@ const WorkSection = forwardRef(({ language, data }, ref) => {
                   </svg>
                 </button>
                 
-                <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
+                <h2 className="carousel-title">{(isMobile ? content[language].sectionsMobile : content[language].sections)[activeIndex]}</h2>
                 
                 <button className="carousel-arrow" onClick={handleNext}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-work3)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
