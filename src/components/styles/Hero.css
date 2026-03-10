@@ -1,9 +1,10 @@
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 20px 80px;
+  padding: 40px 20px 100px;
   background: var(--bg-primary);
   position: relative;
   overflow: hidden;
@@ -50,15 +51,26 @@
 .hero-text-head {
   grid-area: name;
   z-index: 2;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
 }
 
 .hero-description {
   grid-area: desc;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  max-width: 500px;
 }
 
 .hero-ctas {
   grid-area: ctas;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image {
@@ -97,6 +109,8 @@
 .availability-badge--desktop {
   display: inline-flex;
 }
+
+.status-dot {
   width: 8px;
   height: 8px;
   background: var(--accent-1);
@@ -166,23 +180,6 @@
   }
 }
 
-.hero-description {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  max-width: 500px;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  justify-content: center;
-  align-items: center;
-}
-
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -248,15 +245,6 @@
 
 .cta-button.secondary {
   order: 3;
-}
-
-.hero-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  z-index: 1;
 }
 
 .avatar {
@@ -350,7 +338,7 @@
 /* Tablet: 769px to 1024px */
 @media (max-width: 1024px) {
   .hero {
-    padding: 100px 20px 60px;
+    padding: 70px 20px 70px;
   }
 
   .hero-content {
