@@ -942,7 +942,15 @@
   }
 
   .section-nav-label {
-    display: none;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.65rem;
+    background: rgba(1, 193, 106, 0.1);
+    border: 1px solid rgba(1, 193, 106, 0.25);
+    border-radius: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
   }
 
   .carousel-content {
@@ -960,6 +968,7 @@
 
   .about-content-wrapper {
     flex-direction: column;
+    padding: 0 0.25rem;
   }
 
   .about-content {
@@ -990,7 +999,7 @@
 
   /* === Education mobile === */
   .education-timeline {
-    padding: 0 8px;
+    padding: 0 0.5rem;
   }
 
   .education-item {
@@ -1049,7 +1058,7 @@
 
   /* === Experience mobile === */
   .experience-timeline {
-    padding: 0;
+    padding: 0 0.25rem;
   }
 
   .experience-item {
@@ -1149,6 +1158,12 @@
 
   .carousel-header {
     gap: 0.4rem;
+  }
+
+  .section-nav-label {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    max-width: 60px;
   }
 
   .carousel-title {

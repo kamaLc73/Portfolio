@@ -886,14 +886,17 @@
 
   .skills-grid {
     grid-template-columns: 1fr;
+    padding: 0 0.5rem;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+    padding: 0 0.5rem;
   }
 
   .certifications-list {
     grid-template-columns: 1fr 1fr;
+    padding: 0 0.5rem;
   }
 }
 
@@ -913,7 +916,15 @@
   }
 
   .section-nav-label {
-    display: none;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.65rem;
+    background: rgba(1, 193, 106, 0.1);
+    border: 1px solid rgba(1, 193, 106, 0.25);
+    border-radius: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
   }
 
   .carousel-bottom-nav {
@@ -1001,6 +1012,12 @@
 
   .carousel-header {
     gap: 0.4rem;
+  }
+
+  .section-nav-label {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    max-width: 60px;
   }
 
   .carousel-title {

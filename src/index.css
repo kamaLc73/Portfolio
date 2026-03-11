@@ -43,6 +43,18 @@ html {
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 section {
   padding: 80px 0;
   position: relative;
