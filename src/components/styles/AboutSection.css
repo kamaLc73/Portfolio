@@ -935,32 +935,34 @@
     font-size: 2rem;
   }
 
-  .carousel-title {
-    font-size: 1.9rem;
-    white-space: nowrap;
-    width: fit-content;
-    margin: 0 auto 0.75rem;
-    order: -1;
-    flex-basis: 100%;
-    text-align: center;
-  }
-
   .carousel-header {
-    gap: 0.65rem;
-    flex-wrap: wrap;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
     justify-content: center;
   }
 
+  .carousel-title {
+    font-size: 1.25rem;
+    white-space: nowrap;
+    width: fit-content;
+    order: 0;
+    flex-basis: auto;
+    flex-shrink: 1;
+    margin: 0;
+    text-align: center;
+  }
+
   .section-nav-label {
-    font-size: 0.78rem;
-    padding: 0.3rem 0.7rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
     background: rgba(1, 193, 106, 0.1);
     border: 1px solid rgba(1, 193, 106, 0.25);
     border-radius: 20px;
     white-space: nowrap;
-    overflow: visible;
-    text-overflow: unset;
-    max-width: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70px;
+    flex-shrink: 1;
   }
 
   .carousel-content {
@@ -1171,13 +1173,13 @@
   }
 
   .section-nav-label {
-    font-size: 0.68rem;
-    padding: 0.25rem 0.55rem;
-    max-width: none;
+    font-size: 0.62rem;
+    padding: 0.2rem 0.4rem;
+    max-width: 55px;
   }
 
   .carousel-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   .carousel-arrow svg {

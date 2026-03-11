@@ -136,6 +136,22 @@
   margin-left: 0.5rem;
 }
 
+/* Mobile-only inline lang toggle (next to hamburger) */
+.nav-mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-toggle--mobile {
+  margin-left: 0;
+  border: 1.5px solid var(--accent-1);
+  color: var(--accent-1);
+  background: rgba(1, 193, 106, 0.08);
+  padding: 5px 14px;
+  font-size: 0.82rem;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -185,6 +201,15 @@
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+  }
+
+  .nav-mobile-actions {
+    display: flex;
+  }
+
+  /* hide the lang-toggle that's inside the nav-menu on mobile */
+  .nav-menu .lang-toggle:not(.lang-toggle--mobile) {
+    display: none;
   }
 
   .nav-menu {

@@ -58,15 +58,21 @@ function Navbar({ language, toggleLanguage, isDark, toggleTheme, data, navigateT
           </a>
         </div>
         
-        <button 
-          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-mobile-actions">
+          <button className="lang-toggle lang-toggle--mobile" onClick={toggleLanguage}>
+            {language === 'en' ? 'FR' : 'EN'}
+          </button>
+
+          <button 
+            className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <a href="#about-me" className="nav-link" onClick={(e) => handleSubSectionClick(e, 'about', 0)}>
