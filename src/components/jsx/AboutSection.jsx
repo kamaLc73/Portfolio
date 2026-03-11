@@ -127,31 +127,19 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
                   {content[language].sections[(activeIndex - 1 + 3) % 3]}
                 </span>
                 
-                <button className="carousel-arrow" onClick={handlePrevious}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-left-0)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <defs>
-                      <linearGradient id="gradient-left-0" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
-                        <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
-                      </linearGradient>
-                    </defs>
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                    <polyline points="20 18 14 12 20 6"></polyline>
+                <button className="carousel-arrow carousel-arrow--prev" onClick={handlePrevious}>
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="16" stroke="#01C16A" strokeWidth="1.5"/>
+                    <polyline points="21 11 13 18 21 25" stroke="#01C16A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
                 
                 <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
                 
-                <button className="carousel-arrow" onClick={handleNext}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-0)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <defs>
-                      <linearGradient id="gradient-right-0" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
-                        <stop offset="100%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
-                      </linearGradient>
-                    </defs>
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                    <polyline points="4 18 10 12 4 6"></polyline>
+                <button className="carousel-arrow carousel-arrow--next" onClick={handleNext}>
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="16" stroke="#01C16A" strokeWidth="1.5"/>
+                    <polyline points="15 11 23 18 15 25" stroke="#01C16A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
                 
@@ -218,31 +206,19 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
                   {content[language].sections[(activeIndex - 1 + 3) % 3]}
                 </span>
                 
-                <button className="carousel-arrow" onClick={handlePrevious}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-left-1)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <defs>
-                      <linearGradient id="gradient-left-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
-                        <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
-                      </linearGradient>
-                    </defs>
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                    <polyline points="20 18 14 12 20 6"></polyline>
+                <button className="carousel-arrow carousel-arrow--prev" onClick={handlePrevious}>
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="16" stroke="#01C16A" strokeWidth="1.5"/>
+                    <polyline points="21 11 13 18 21 25" stroke="#01C16A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
                 
                 <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
                 
-                <button className="carousel-arrow" onClick={handleNext}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-1)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <defs>
-                      <linearGradient id="gradient-right-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
-                        <stop offset="100%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
-                      </linearGradient>
-                    </defs>
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                    <polyline points="4 18 10 12 4 6"></polyline>
+                <button className="carousel-arrow carousel-arrow--next" onClick={handleNext}>
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="16" stroke="#01C16A" strokeWidth="1.5"/>
+                    <polyline points="15 11 23 18 15 25" stroke="#01C16A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
                 
@@ -324,31 +300,19 @@ const AboutSection = forwardRef(({ language, data }, ref) => {
                   {content[language].sections[(activeIndex - 1 + 3) % 3]}
                 </span>
                 
-                <button className="carousel-arrow" onClick={handlePrevious}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-left-2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <defs>
-                      <linearGradient id="gradient-left-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
-                        <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
-                      </linearGradient>
-                    </defs>
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                    <polyline points="20 18 14 12 20 6"></polyline>
+                <button className="carousel-arrow carousel-arrow--prev" onClick={handlePrevious}>
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="16" stroke="#01C16A" strokeWidth="1.5"/>
+                    <polyline points="21 11 13 18 21 25" stroke="#01C16A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
                 
                 <h2 className="carousel-title">{content[language].sections[activeIndex]}</h2>
                 
-                <button className="carousel-arrow" onClick={handleNext}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-right-2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <defs>
-                      <linearGradient id="gradient-right-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.9)', stopOpacity: 1}} />
-                        <stop offset="100%" style={{stopColor: '#01C16A', stopOpacity: 1}} />
-                      </linearGradient>
-                    </defs>
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                    <polyline points="4 18 10 12 4 6"></polyline>
+                <button className="carousel-arrow carousel-arrow--next" onClick={handleNext}>
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="16" stroke="#01C16A" strokeWidth="1.5"/>
+                    <polyline points="15 11 23 18 15 25" stroke="#01C16A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
                 

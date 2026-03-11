@@ -149,24 +149,51 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
   flex-shrink: 0;
-  padding: 0;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.carousel-arrow--prev {
+  animation: arrow-nudge-left 2s ease-in-out infinite;
+}
+
+.carousel-arrow--next {
+  animation: arrow-nudge-right 2s ease-in-out infinite;
+}
+
+@keyframes arrow-nudge-left {
+  0%, 100% { transform: translateX(0);   opacity: 1; }
+  45%       { transform: translateX(-5px); opacity: 0.7; }
+  55%       { transform: translateX(-5px); opacity: 0.7; }
+}
+
+@keyframes arrow-nudge-right {
+  0%, 100% { transform: translateX(0);   opacity: 1; }
+  45%       { transform: translateX(5px);  opacity: 0.7; }
+  55%       { transform: translateX(5px);  opacity: 0.7; }
 }
 
 .carousel-arrow:hover {
+  animation-play-state: paused;
+  background: rgba(1, 193, 106, 0.12);
   transform: scale(1.15);
 }
 
+.carousel-header:has(.carousel-arrow:hover) .carousel-arrow {
+  animation-play-state: paused;
+}
+
 .carousel-arrow svg {
-  width: 40px;
-  height: 40px;
-  filter: drop-shadow(0 0 4px rgba(1, 193, 106, 0.4));
-  transition: all 0.3s ease;
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 5px rgba(1, 193, 106, 0.3));
+  transition: filter 0.25s ease;
 }
 
 .carousel-arrow:hover svg {
-  filter: drop-shadow(0 0 8px rgba(1, 193, 106, 0.7));
+  filter: drop-shadow(0 0 10px rgba(1, 193, 106, 0.75));
 }
 
 /* Carousel Navigation */
@@ -972,8 +999,9 @@
 
   .edu-date-badge {
     display: block;
+    width: fit-content;
+    margin: 0 auto 0.6rem;
     text-align: center;
-    margin-bottom: 0.6rem;
     font-size: 0.8rem;
   }
 
@@ -1224,29 +1252,4 @@
     font-size: 0.82rem;
   }
 
-  .cert-header {
-    padding: 1rem;
-    gap: 0.75rem;
-  }
-
-  .cert-logo {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-  }
-
-  .cert-info h3 {
-    font-size: 0.95rem;
-  }
-
-  .cert-issuer {
-    font-size: 0.82rem;
-  }
-
-  .cert-btn {
-    width: 100%;
-    text-align: center;
-    padding: 0.65rem 1rem;
-    font-size: 0.85rem;
-  }
 }
