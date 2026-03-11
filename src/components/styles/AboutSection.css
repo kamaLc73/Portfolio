@@ -1000,8 +1000,8 @@
   .edu-date-badge {
     display: block;
     width: fit-content;
-    margin: 0 auto 0.6rem;
-    text-align: center;
+    margin: 0 0 0.6rem;
+    text-align: left;
     font-size: 0.8rem;
   }
 
