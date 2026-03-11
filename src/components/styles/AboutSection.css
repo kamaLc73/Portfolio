@@ -953,15 +953,11 @@
   }
 
   .section-nav-label {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.5rem;
-    background: rgba(1, 193, 106, 0.1);
-    border: 1px solid rgba(1, 193, 106, 0.25);
-    border-radius: 20px;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 8px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 70px;
     flex-shrink: 1;
   }
 
@@ -1173,9 +1169,8 @@
   }
 
   .section-nav-label {
-    font-size: 0.62rem;
+    font-size: 0.65rem;
     padding: 0.2rem 0.4rem;
-    max-width: 55px;
   }
 
   .carousel-title {
