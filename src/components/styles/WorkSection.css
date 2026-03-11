@@ -1024,13 +1024,13 @@
   }
 
   .section-nav-label {
-    font-size: 0.65rem;
-    padding: 0.25rem 0.5rem;
-    max-width: 90px;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.55rem;
+    max-width: none;
   }
 
   .carousel-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .carousel-arrow svg {
