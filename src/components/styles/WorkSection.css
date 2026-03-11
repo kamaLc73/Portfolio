@@ -909,31 +909,34 @@
     font-size: 2rem;
   }
 
-  .carousel-title {
-    font-size: 2rem;
-    white-space: normal;
-    text-align: center;
-    width: 100%;
-    order: -1;
-    margin-bottom: 0.75rem;
-  }
-
   .carousel-header {
-    gap: 0.75rem;
-    flex-wrap: wrap;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
     justify-content: center;
   }
 
+  .carousel-title {
+    font-size: 1.25rem;
+    white-space: nowrap;
+    width: fit-content;
+    order: 0;
+    flex-basis: auto;
+    flex-shrink: 1;
+    margin: 0;
+    text-align: center;
+  }
+
   .section-nav-label {
-    font-size: 0.72rem;
-    padding: 0.3rem 0.65rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
     background: rgba(1, 193, 106, 0.1);
     border: 1px solid rgba(1, 193, 106, 0.25);
     border-radius: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 110px;
+    max-width: 70px;
+    flex-shrink: 1;
   }
 
   .carousel-bottom-nav {
