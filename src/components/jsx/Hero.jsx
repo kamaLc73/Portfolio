@@ -90,7 +90,7 @@ function Hero({ language, data, navigateToSubSection }) {
         </div>
         <div className="hero-image">
           <div className="avatar">
-            <img src="/logos/kamal.jpg" alt="Kamal Dehbi" />
+            <img src="/kamal.jpeg" alt="Kamal Dehbi" />
           </div>
           <div className="availability-badge availability-badge--desktop">
             <span className="status-dot"></span>
